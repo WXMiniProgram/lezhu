@@ -1,0 +1,14 @@
+{
+  "pages":[
+    "pages/helpList/helpList",
+    "pages/helpInput/helpInput",
+    "pages/helpDetail/helpDetail",
+    "pages/myPage/myPage"
+  ],
+  "window":{
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "乐助",
+    "navigationBarTextStyle":"black"
+  },
+  "debug": true
+}
