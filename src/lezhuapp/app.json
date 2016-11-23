@@ -4,7 +4,8 @@
     "pages/helpInput/helpInput",
     "pages/previewphoto/previewphoto",
     "pages/helpDetail/helpDetail",
-    "pages/myPage/myPage"
+    "pages/myPage/myPage",
+    "pages/helpConfirmed/helpConfirmed"
   ],
   "window":{
     "navigationBarBackgroundColor": "#fff",
