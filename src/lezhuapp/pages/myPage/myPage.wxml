@@ -13,7 +13,7 @@
     <view class="upSpace">
     </view>
 
-    <view class="itemHelp">
+    <view class="itemHelp" bindtap="confirmpage">
         <view class="itemHelpLeft fl">
             <image src="../../images/me/myToHelp.png" class="helpImg fl"></image>
             <text class="fl helpName">我帮助的</text>
