@@ -12,25 +12,25 @@
     "navigationBarTextStyle":"black"
   },
   "tabBar": {
-    "color":"#9C9C9D",
-    "selectedColor": "#2D2D30",
-    "backgroundColor": "#FFFFFF",
+    "color":"#ffffff",
+    "selectedColor": "#e8ae26",
+    "backgroundColor": "#313131",
     "borderStyle": "black",
     "list": [{
       "pagePath": "pages/helpList/helpList",
-      "iconPath": "images/icon-home.png",
-      "selectedIconPath": "images/icon-home.png",
+      "iconPath": "images/tabIcon/toHelp1.png",
+      "selectedIconPath": "images/tabIcon/toHelp.png",
       "text": "去帮助"
     }, {
       "pagePath": "pages/helpInput/helpInput",
-      "iconPath": "images/icon-input.png",
-      "selectedIconPath": "images/icon-input.png",
+      "iconPath": "images/tabIcon/getHelp1.png",
+      "selectedIconPath": "images/tabIcon/getHelp.png",
       "text": "求帮助"
     },
     {
       "pagePath": "pages/myPage/myPage",
-      "iconPath": "images/icon-my.png",
-      "selectedIconPath": "images/icon-my.png",
+      "iconPath": "images/tabIcon/me1.png",
+      "selectedIconPath": "images/tabIcon/me.png",
       "text": "我的"
     }]
   },
