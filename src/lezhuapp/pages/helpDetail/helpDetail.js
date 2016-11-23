@@ -1,10 +1,15 @@
 var app=getApp()
 Page({
   data: {
-    latitude: 0,
-    longitude: 0,
+    latitude: 23,
+    longitude: 131,
     scale:28,
-    markers: [],
+    markers: [
+      {latitude: 23,
+      longitude:131,
+      name: 'T.I.T 创意园',
+      desc: '我现在的位置'
+      }],
     covers: []
   },
 
@@ -42,7 +47,8 @@ Page({
   },
    onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数
-    this.getLocation();
+    // this.getLocation();
+     console.log(options.latitude)
   },
   onReady:function(){
     // 页面渲染完成

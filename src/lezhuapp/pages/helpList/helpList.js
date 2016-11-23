@@ -21,18 +21,14 @@ Page(
     }]
   },
 
-  openLocation:function (obj){
-    app.mapData.latitude=Number(obj.latitude),
-    app.mapData.longitude=Number(obj.longitude),
-    app.mapData.headIcon=obj.headicon
-  },
-
   openMap: function(e) {
     console.log(e.currentTarget.dataset);
     var infoObj=e.currentTarget.dataset;
-    this.openLocation(infoObj);
+    var latitudesss=Number(infoObj.latitude);
+    var longitudesss=Number(infoObj.longitude);
+    var headIcon=infoObj.headicon;
     wx.navigateTo({
-      url: '../helpDetail/helpDetail'
+      url: '../helpDetail/helpDetail?latitude='+latitudesss
     })
   },
 
