@@ -2,9 +2,10 @@ var app = getApp();
 Page({
     data:{
         scrollHeight:150,
-        imageWidth:250,
-        imageHeight:250,
+        imageWidth:125,
+        imageHeight:125,
         photoList:[],
+        location:"选择我的位置",
         array: ['跑腿', '找租房', '换零钱', '其他'],
         index: 0,
         date:"2016-09-01",
@@ -94,11 +95,30 @@ Page({
       date:e.detail.value
     })
   },
-  bindTimeChange:function(e){
-    this.setData({
-      time:e.detail.time
+//   bindTimeChange:function(e){
+//     this.setData({
+//       time:e.detail.time
+//     })
+//   },
+
+  chooseLocation:function(){
+      var that = this;
+    wx.chooseLocation({
+        type: 'wgs84',
+        success: function(res) {
+            var latitude = res.latitude;
+            var longitude = res.longitude;
+            var name = res.name;
+            var address = res.address;
+            console.log(name);
+            that.setData({
+              location:name
+             })
+        }
     })
+      
   },
+
     onLoad:function(){
         console.log("加载照片列表");
         var that = this;
@@ -111,11 +131,47 @@ Page({
             console.log(res.windowHeight);
             console.log(res.version);
             that.setData({
-                scrollHeight:res.windowHeight/5
+                scrollHeight:res.windowHeight/8
             });
           }
         });
+        //获取当前时间
+        var timeStr =new Date;
+        function formatNumber(n) {
+            n = n.toString()
+            return n[1] ? n : '0' + n
+            }
+
+        function formatTime(time) {
+            var hour = time.getHours()
+            var minute = time.getMinutes()
+            var second = time.getSeconds()
+           
+            return [hour, minute].map(formatNumber).join(':')
+            }
+
+        function formatDate(date) {
+            var year = date.getFullYear()
+            var month = date.getMonth() + 1
+            var day = date.getDate()
+
+            return [year, month, day].map(formatNumber).join('-')
+            }
+
+        var dateNow=formatDate(timeStr);
+        // var timeNow=formatTime(timeStr);
+        that.setData({
+                date:dateNow,
+                // time:timeNow
+            });
+
+            
     },
+     formSubmit: function(e) {
+    console.log('form发生了submit事件，携带数据为：', e.detail.value)
+    console.log(this.data.photoList)
+ 
+  },
     onShow:function(){
         console.log("显示图片")
         // 获取本地保存的图片

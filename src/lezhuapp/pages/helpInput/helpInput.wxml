@@ -1,47 +1,63 @@
-<view> 
-<input class="publish-title" placeholder="标题" />
-<textarea  class="publish-describe" placeholder="描述您的求助，清晰的描述有助于更快的获得帮助" /> 
-<scroll-view scroll-y="true" class="show-area" style="height:{{scrollHeight}}px;">
-    <image bindtap="addAndSavePhoto" style="width:{{imageWidth}}rpx;height:{{imageHeight}}rpx;" mode="aspectFill" class="plus-image" src="../../images/plus.png" />
-    <view class="photo-list" wx:for="{{photoList}}" wx:key="*this" wx:for-item="imageSrc">
-        <image bindtap="previewPhoto" data-image-src="{{imageSrc}}" style="width:{{imageWidth}}rpx;height:{{imageHeight}}rpx;" mode="aspectFill" src="{{imageSrc}}"/>
-    </view>  
-</scroll-view> 
+<view class="publish-container"> 
 
-<view>选择我的位置</view>
-
-<view>
-<label class="publish-score-title" >奖赏积分</label>
-<input class="publish-score" placeholder="高赏分更容易获得帮助" />
-</view>
-
-<view>
-<label class="publish-type-title" >求助类型</label>
-<view class="section">
-            <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}" >
-                <view class="picker">
-                    {{curdata}}
-                </view>
-            </picker>
-</view>
-
-<label class="publish-type-title" >有效期至</label>
-
-<view class="section">
-            <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
-                <view class="picker">
-                    日期: {{date}}
-                </view>
-            </picker>
-</view>
-
-<view class="section">
-            <picker mode="time" value="{{time}}" start="09:01" end="21:01" bindchange="bindTimeChange">
-                <view class="picker">
-                    时间: {{time}}
-                </view>
-            </picker>
+<form catchsubmit="formSubmit" >
+    <view class="publish-section">
+        <input name="title" class="publish-title" placeholder="标题" />
+        <textarea  name="describe" class="publish-describe" placeholder="描述您的求助，清晰的描述有助于更快的获得帮助" /> 
+        <scroll-view scroll-y="true" class="show-area" style="height:{{scrollHeight}}px;">
+            <image bindtap="addAndSavePhoto" style="width:{{imageWidth}}rpx;height:{{imageHeight}}rpx;" mode="aspectFill" class="plus-image" src="../../images/plus.png" />
+            <view class="photo-list" wx:for="{{photoList}}" wx:key="*this" wx:for-item="imageSrc">
+                <image bindtap="previewPhoto" data-image-src="{{imageSrc}}" style="width:{{imageWidth}}rpx;height:{{imageHeight}}rpx;" mode="aspectFill" src="{{imageSrc}}"/>
+            </view>  
+        </scroll-view> 
+        <view class="publish-location">
+        <image class="publish-location-img" mode="aspectFill" src="../../images/location.png" />
+        <input name="location" class="publish-location-title" bindtap="chooseLocation" value="{{location}}"/>
         </view>
+    </view>
 
+    <view class="publish-section">
+    <view class="publish-section-item-first">
+        <label class="publish-score-title" >奖赏积分</label>
+        <input name="score" class="publish-score" placeholder="高赏分更容易获得帮助" />
+    </view>
 
+    <view class="publish-section-item-first">
+        <label class="publish-type-title" >求助类型</label>
+        <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}" >
+                <view name="helptype" class="picker">
+                        {{curdata}}
+                </view>
+        </picker>
+    </view>
+
+    <view class="publish-section-item">
+        <label class="publish-type-title" >加急</label>
+        <switch class="publish-switch" name="isquickly"/>
+    </view>
+
+    </view>
+
+    <view class="publish-section">
+    <label class="publish-type-title" >有效期至</label>
+    <picker name="date" mode="date" value="{{date}}" start="2016-09-01" end="2018-09-01" bindchange="bindDateChange">
+            <view class="picker">
+                日期: {{date}}
+            </view>
+        </picker>
+        <!--<picker mode="time" value="{{time}}" start="00:00" end="23:59" bindchange="bindTimeChange">
+            <view class="picker">
+                时间: {{time}}
+            </view>
+        </picker>-->
+    </view>
+
+    <view class="publish-section">
+    <label class="publish-score-title" >联系方式</label>
+    <input name="phonenumber" class="publish-score" placeholder="请填写您的电话" />
+    </view>
+
+    <button class="publish-button" formType="submit">现在发布</button>
+
+ </form>
 </view>
