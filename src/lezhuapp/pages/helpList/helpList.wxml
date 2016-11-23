@@ -1,0 +1,16 @@
+<block wx:for="{{array}}">
+  <view class="help-list" bindtap="openMap" data-longitude="{{item.longitude}}" data-latitude="{{item.latitude}}" data-iconpath="{{item.iconPath}}"
+  data-nickname="{{item.nickName}}" data-headicon="{{item.headIcon}}"> {{nickName}}
+   <view class="help-list-top">
+        <view class="help-list-top-left">
+            <image class="headIcon" src="{{item.headIcon}}"></image>
+        </view>
+        <view class="help-list-top-right">  
+            <text class="help-list-top-right-nickName">{{item.nickName}}</text>
+            <text class="help-list-top-right-distance">{{item.distance}}  km</text>
+
+        </view> 
+   </view> 
+  <image src="{{item.iconPath}}"></image>  
+  </view>
+</block>

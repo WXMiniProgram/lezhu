@@ -1,0 +1,4 @@
+<view>
+<map longitude="" latitude="" markers="{{markers}}" covers="{{covers}}" style="width: 375px; height: 60%;"></map>
+
+</view>

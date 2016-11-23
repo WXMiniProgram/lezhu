@@ -1,0 +1,44 @@
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+}
+
+.textStyle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.textContainer {
+  margin-top: 200px;
+}
+
+.help-list{
+  width: 375px;
+  height: auto;
+}
+
+.headIcon{
+  width: 60px;
+  height: 60px; 
+
+}
+
+.help-list-top-left{
+    float: left;
+}
+
+.help-list-top-right-nickName{
+    line-height: 60px;
+}
+
+.help-list-top-right-distance{
+    float:right;
+    line-height: 60px;
+    margin-right: 20px;
+}
