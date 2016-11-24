@@ -18,5 +18,10 @@ Page({
         wx.navigateTo({
              url: '../helpConfirmed/helpConfirmed'
         })
+    },
+    myGetHelpPage:function(){
+        wx.navigateTo({
+             url: '../myGetHelp/myGetHelp'
+        })
     }
 })
