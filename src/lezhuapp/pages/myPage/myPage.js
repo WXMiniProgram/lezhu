@@ -14,9 +14,9 @@ Page({
             that.update();
         })
     },
-    confirmpage:function(){
+    myToHelpPage:function(){
         wx.navigateTo({
-             url: '../helpConfirmed/helpConfirmed'
+             url: '../myToHelp/myToHelp'
         })
     },
     myGetHelpPage:function(){
