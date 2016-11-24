@@ -5,7 +5,9 @@
     "pages/previewphoto/previewphoto",
     "pages/helpDetail/helpDetail",
     "pages/myPage/myPage",
-    "pages/helpConfirmed/helpConfirmed"
+    "pages/helpConfirmed/helpConfirmed",
+    "pages/myGetHelp/myGetHelp",
+    "pages/myToHelp/myToHelp"
   ],
   "window":{
     "navigationBarBackgroundColor": "#fff",
