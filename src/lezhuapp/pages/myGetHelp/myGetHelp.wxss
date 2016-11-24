@@ -5,6 +5,7 @@ page{
 .container{
     background-color:#D6D6D6;
     height:100%;
+    border-top: 1px solid #d4d4d4;
 }
 
 .fl{
