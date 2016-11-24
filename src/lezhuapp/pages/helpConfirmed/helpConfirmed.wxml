@@ -1,20 +1,21 @@
 <view class="container">
+<!--<map longitude="{{longitude}}" latitude="{{latitude}}" markers="{{markers}}" covers="{{covers}}" style="width: 375px; height: 300px;"></map>-->
     <view class="item">
         <view class="itemLeft fl">
-            <image src="{{userInfo.avatarUrl}}" class="personImg fl"></image>
-            <text class="fl personName">{{userInfo.nickName}}</text>
+            <image src="{{headIcon}}" class="personImg fl"></image>
+            <text class="fl personName">{{nickName}}</text>
 
         </view>
         <view class="itemRight fr">
-            <text class="fr">悬赏：5000积分</text>
+            <text class="fr">悬赏：{{payScore}}积分</text>
         </view>
     </view>
     <view class="description">
         <view>
-            <text>标题</text>
+            <text>{{title}}</text>
         </view>
          <view class="desDetail">
-            <text>标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题</text>
+            <text>{{content}}</text>
         </view>
     </view>
 
@@ -26,7 +27,7 @@
             <text class="fl helpName">联系方式</text>
         </view>
         <view class="itemHelpRight fl">
-            <text class="fl helpDetail">15102135285</text>
+            <text class="fl helpDetail">{{phone}}</text>
         </view>
     </view>
     <view class="itemHelp fl">
@@ -34,8 +35,15 @@
             <text class="fl helpName">详细地址</text>
         </view>
         <view class="itemHelpRight fl">
-            <text class="fl helpDetail">浦东新区浦东新浦东新区浦东新浦东新区浦东新浦东新区浦东新浦东新区浦东新浦东新区浦东新浦东新区浦东新浦东新区浦东新浦东新区浦东新</text>
+            <text class="fl helpDetail">{{location}}</text>
         </view>
     </view>
+    <!--<view class="publish-button-container">    
+    <button class="publish-button" bindtap="helpClick">立即帮助</button>
+    </view>-->
+
+ <!--<modal title="订单确认" confirm-text="现在就去" cancel-text="取消" hidden="{{modalHidden}}" mask bindconfirm="modalChange" bindcancel="modalCancle">
+            请尽快与发布者联系！
+        </modal>-->
 
 </view>

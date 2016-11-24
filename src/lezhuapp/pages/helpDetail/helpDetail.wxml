@@ -1,4 +1,49 @@
-<view>
-<map longitude="{{longitude}}" latitude="{{latitude}}" markers="{{markers}}" covers="{{covers}}" style="width: 375px; height: 60%;"></map>
+<view class="container">
+<map longitude="{{longitude}}" latitude="{{latitude}}" markers="{{markers}}" covers="{{covers}}" style="width: 375px; height: 300px;"></map>
+    <view class="item">
+        <view class="itemLeft fl">
+            <image src="{{headIcon}}" class="personImg fl"></image>
+            <text class="fl personName">{{nickName}}</text>
+
+        </view>
+        <view class="itemRight fr">
+            <text class="fr">悬赏：{{payScore}}积分</text>
+        </view>
+    </view>
+    <view class="description">
+        <view>
+            <text>{{title}}</text>
+        </view>
+         <view class="desDetail">
+            <text>{{content}}</text>
+        </view>
+    </view>
+
+    <view class="upSpace">
+    </view>
+
+    <view class="itemHelp fl">
+        <!--<view class="itemHelpLeft fl">
+            <text class="fl helpName">联系方式</text>
+        </view>-->
+        <!--<view class="itemHelpRight fl">
+            <text class="fl helpDetail">{{phone}}</text>
+        </view>-->
+    </view>
+    <view class="itemHelp fl">
+        <view class="itemHelpLeft fl">
+            <text class="fl helpName">详细地址</text>
+        </view>
+        <view class="itemHelpRight fl">
+            <text class="fl helpDetail">{{location}}</text>
+        </view>
+    </view>
+    <view class="publish-button-container">    
+    <button class="publish-button" bindtap="helpClick">立即帮助</button>
+    </view>
+
+ <modal title="订单确认" confirm-text="现在就去" cancel-text="取消" hidden="{{modalHidden}}" mask bindconfirm="modalChange" bindcancel="modalCancle">
+            请尽快与发布者联系！
+        </modal>
 
 </view>

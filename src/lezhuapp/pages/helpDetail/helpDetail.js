@@ -1,70 +1,65 @@
-var app=getApp()
+var app = getApp();
 Page({
-  data: {
-    latitude: 23,
-    longitude: 131,
-    scale:28,
+    data: {
+    latitude: null,
+    longitude: null,
+    location:null,
+    headIcon:null,
+    nickName:null,
+    phone:"",
+    payScore:null,
+    title:"",
+    content:"",
     markers: [
-      {latitude: 23,
-      longitude:131,
-      name: 'T.I.T 创意园',
-      desc: '我现在的位置'
-      }],
-    covers: []
-  },
+      // {
+    //   latitude: 23.099994,
+    //   longitude: 113.324520,
+    //   name: 'T.I.T 创意园',
+    //   desc: '我现在的位置'
+    // }
+    ],
+    covers: [
 
-  //打开定位信息
-  openLocation:function (){
-    wx.getLocation({
-      type: 'gcj02', // 默认为 wgs84 返回 gps 坐标，gcj02 返回可用于 wx.openLocation 的坐标
-      success: function(res){
-          wx.openLocation({
-            latitude: res.latitude, // 纬度，范围为-90~90，负数表示南纬
-            longitude: res.longitude, // 经度，范围为-180~180，负数表示西经
-            scale: 28, // 缩放比例
-          })
-      },
+    ],
+    modalHidden: true
+  },
+  helpClick:function(){
+    this.setData({
+      modalHidden: false
     })
   },
- 
-//更新地址信息
-  getLocation:function () {
+  modalCancle: function(e) {
+    this.setData({
+      modalHidden: true
+    })
+  },
+  modalChange: function(e) {
+    this.setData({
+      modalHidden: true
+    })
+     wx.navigateTo({
+      url: '../helpConfirmed/helpConfirmed'
+    })
+  },
+  onLoad: function () {
     var that = this
-        var newCover = {
-            latitude: app.mapData.latitude,
-            longitude: app.mapData.longitude,
-            iconPath: app.mapData.headIcon
-          };
-        var oriCovers = that.data.covers;
-        oriCovers.push(newCover);
-        that.setData({
-          latitude: app.mapData.latitude,
-          longitude: app.mapData.longitude,
-          scale:28,
-          markers: [],
-          covers: oriCovers
-        });
-  },
-   onLoad:function(options){
-    // 页面初始化 options为页面跳转所带来的参数
-    // this.getLocation();
-     console.log(options.latitude)
-  },
-  onReady:function(){
-    // 页面渲染完成
- 
-  },
-  onShow:function(){
-    // 页面显示
-    
-    // this.openLocation();
-    // this.chooseLocation();
-  },
-  onHide:function(){
-    // 页面隐藏
-  },
-  onUnload:function(){
-    // 页面关闭
+  	//调用应用实例的方法获取全局数据
+    that.setData({
+    latitude: app.mapData.latitude,
+    longitude: app.mapData.longitude,
+    location: app.mapData.location,
+    headIcon:app.mapData.headIcon,
+    nickName:app.mapData.nickName,
+    phone:app.mapData.phone,
+    payScore:app.mapData.payScore,
+    title:app.mapData.title,
+    content:app.mapData.content,
+    covers:{
+      latitude: app.mapData.latitude,
+      longitude: app.mapData.longitude,
+      iconPath: '../../images/map-location.png',
+      rotate: 0
+    }
+    })
   }
- 
 })

@@ -24,7 +24,6 @@ page{
 }
 
 .description{
-    width:100%;
     border-bottom: 0px;
     background: #fff;
     padding-top: 10px;
@@ -58,13 +57,16 @@ page{
 }
 
 .itemRight{
-    text-align: right;
-    border: 0;
-    font-size: 16px;
-    color: #e8ae26;
-    margin-top: 32px;
-    margin-right: 5%;
-    width: 50%;
+    background-color: #FEA80B;
+    text-align: center;
+    vertical-align: middle;
+    border-radius:2rem 0 0 2rem;
+    width:7rem;
+    height:2rem;
+    float: right;
+    margin-top: 1rem;
+    line-height:2rem;
+    font-size: 0.8rem;
 }
 
 .upSpace{
@@ -104,4 +106,22 @@ page{
 
 .helpDetail{
     color:black;
+}
+
+.publish-button-container{
+  position:relative;
+  bottom:0;
+  padding-top:8%;
+}
+
+.publish-button{
+  width:100%;
+  font-size:18px;
+  text-align:center;
+  text-decoration:none;
+  line-height:2.2;
+  border-radius:0px;
+  overflow:hidden;
+  color:#FFFFFF;
+  background-color:#F5A520;
 }

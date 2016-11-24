@@ -29,7 +29,13 @@ App({
   mapData:{
     latitude: null,
     longitude: null,
-    headIcon:""
+    headIcon:"",
+    nickName:"",
+    payScore:null,
+    phone:null,
+    title:"",
+    content:""
+
   }
 })
 

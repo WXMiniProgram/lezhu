@@ -1,16 +1,34 @@
+<view class="helplist-container">
+<view class="helplist-top-type">
+        <picker class="helplist-top-type-picker" bindchange="bindPickerChange" value="{{index}}" range="{{typearray}}" >
+                <view name="helptype" class="picker">
+                        {{typedata}}
+                </view>
+        </picker>
+    </view>
+
 <block wx:for="{{array}}">
   <view class="help-list" bindtap="openMap" data-longitude="{{item.longitude}}" data-latitude="{{item.latitude}}" data-iconpath="{{item.iconPath}}"
-  data-nickname="{{item.nickName}}" data-headicon="{{item.headIcon}}"> {{nickName}}
+  data-nickname="{{item.nickName}}" data-headicon="{{item.headIcon}}" data-payscore="{{item.payScore}}" data-title="{{item.title}}" 
+  data-content="{{item.content}}"  data-location="{{item.location}}" data-phone="{{item.phone}}"> {{nickName}}
    <view class="help-list-top">
         <view class="help-list-top-left">
             <image class="headIcon" src="{{item.headIcon}}"></image>
+        <text class="">{{item.nickName}}</text>
         </view>
-        <view class="help-list-top-right">  
-            <text class="help-list-top-right-nickName">{{item.nickName}}</text>
-            <text class="help-list-top-right-distance">{{item.distance}}  km</text>
-
-        </view> 
+        <view class="help-list-top-right">
+         <text>悬赏：{{item.payScore}}积分</text>   
+        </view>
    </view> 
-  <image src="{{item.iconPath}}"></image>  
+    <view class="help-list-bottom">
+    <view class="help-list-bottom-left">
+            <text>{{item.title}}</text>
+    </view>
+    <view class="help-list-bottom-right">
+            <text >{{item.distance}}  km</text>
+    </view>
+    </view> 
   </view>
 </block>
+</view>
+
