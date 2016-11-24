@@ -57,7 +57,9 @@
     <input name="phonenumber" class="publish-score" placeholder="请填写您的电话" />
     </view>
 
+    <view class="publish-button-container">    
     <button class="publish-button" formType="submit">现在发布</button>
+    </view>
 
  </form>
 </view>
