@@ -1,12 +1,12 @@
 <view class="container">
     <view class="item">
         <view class="itemLeft fl">
-            <image src="{{userInfo.avatarUrl}}" class="personImg fl"></image>
-            <text class="fl personName">{{userInfo.nickName}}</text>
+            <image src="{{wechatUserInfo.avatarUrl}}" class="personImg fl"></image>
+            <text class="fl personName">{{wechatUserInfo.nickName}}</text>
 
         </view>
         <view class="itemRight fr">
-            <text class="fr">我的积分：5000</text>
+            <text class="fr">我的积分:{{userInfo.usePoint}}</text>
         </view>
     </view>
 
@@ -32,7 +32,5 @@
            <image src="../../images/me/arrow.png" class="arrowImg fr"></image>
         </view>
     </view>
-
-
 
 </view>

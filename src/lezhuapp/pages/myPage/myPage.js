@@ -1,24 +1,68 @@
 var app = getApp();
 Page({
     data: {
-        userInfo: {}
+        wechatUserInfo: {},
+        userInfo:{}
     },
+
     onLoad: function () {
         var that = this
   	    //调用应用实例的方法获取全局数据
         app.getUserInfo(function(userInfo){
             //更新数据
             that.setData({
-                userInfo:userInfo
+                wechatUserInfo:userInfo
             });
             that.update();
         })
     },
+
+    onReady: function () {
+        this.fetchData();
+    },
+
+    //获取数据
+    fetchData:function(){
+        var self = this;
+        wx.request({
+            url: 'https://wechatapp.zhhhorizon.net/intl-console-web/user/getUserInfo',
+            header:{
+                "contentType":"application/json",
+                "dataType":"json"
+            },
+            data: {
+                openId: 'userId' ,
+            },
+            method:"POST",
+            success: function(resp) {
+                if (typeof resp.data == Object){
+                    self.setData({
+                        userInfo:resp.data
+                    });
+                }
+                else{
+                    self.doMock();
+                }
+            },
+            fail:function(resp){
+                self.doMock();
+            }
+        });
+    },
+
+    doMock:function(){
+        this.setData({
+            userInfo:app.mockUserInfo
+        });
+    },
+
+    //跳转页面
     myToHelpPage:function(){
         wx.navigateTo({
              url: '../myToHelp/myToHelp'
         })
     },
+    
     myGetHelpPage:function(){
         wx.navigateTo({
              url: '../myGetHelp/myGetHelp'

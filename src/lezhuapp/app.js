@@ -36,6 +36,13 @@ App({
     title:"",
     content:""
 
+  },
+  mockUserInfo:{
+    userId:"mockUser1",
+    userName:"Horizon",
+    mobile:"12345678912",
+    usePoint:"1000",
+    avatarUrl:""
   }
 })
 
