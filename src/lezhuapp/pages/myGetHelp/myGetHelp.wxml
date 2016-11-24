@@ -1,0 +1,37 @@
+<view class="container">
+    <view class="description">
+        <view>
+            <text>标题</text>
+        </view>
+         <view class="desDetail">
+            <text>标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题</text>
+        </view>
+        <view class="itemStatus">
+            <text>求助状态</text>
+            <view wx:if="{{status == 0}}" class="statusDetail">求助信息已发布，暂时没人来帮忙。</view>
+            <view wx:elif="{{status == 1}}" class="statusDetail">
+                <view>XXX想要帮助您，Ta将通过电话与您取得联系。请确认要Ta帮您。</view>
+                <view>确认后，您悬赏的积分将扣除。只有当Ta完成帮助，并得到您的确认后，对方才能收到您的悬赏积分。</view>
+                <view class="button-wrapper">
+                    <button type="primary" size="mini">
+                        确认要Ta帮忙
+                    </button>
+                </view>
+            </view>
+            <view wx:elif="{{status == 2}}" class="statusDetail">
+                <view>XXX正在帮助您。</view>
+                <view>确认后，您悬赏的积分将扣除。只有当Ta完成帮助，并得到您的确认后，对方才能收到您的悬赏积分。</view>
+                <view class="button-wrapper">
+                    <button type="primary" size="mini">
+                        Ta已经帮我，给Ta积分！
+                    </button>
+                </view>
+            </view>
+            <view wx:elif="{{status == 3}}" class="statusDetail">您的求助已完成。</view>
+        </view>
+    </view>
+
+    <view class="upSpace">
+    </view>
+
+</view>
