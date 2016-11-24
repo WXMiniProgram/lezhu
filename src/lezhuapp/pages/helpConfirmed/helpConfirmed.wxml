@@ -1,0 +1,41 @@
+<view class="container">
+    <view class="item">
+        <view class="itemLeft fl">
+            <image src="{{userInfo.avatarUrl}}" class="personImg fl"></image>
+            <text class="fl personName">{{userInfo.nickName}}</text>
+
+        </view>
+        <view class="itemRight fr">
+            <text class="fr">悬赏：5000积分</text>
+        </view>
+    </view>
+    <view class="description">
+        <view>
+            <text>标题</text>
+        </view>
+         <view class="desDetail">
+            <text>标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题</text>
+        </view>
+    </view>
+
+    <view class="upSpace">
+    </view>
+
+    <view class="itemHelp fl">
+        <view class="itemHelpLeft fl">
+            <text class="fl helpName">联系方式</text>
+        </view>
+        <view class="itemHelpRight fl">
+            <text class="fl helpDetail">15102135285</text>
+        </view>
+    </view>
+    <view class="itemHelp fl">
+        <view class="itemHelpLeft fl">
+            <text class="fl helpName">详细地址</text>
+        </view>
+        <view class="itemHelpRight fl">
+            <text class="fl helpDetail">浦东新区浦东新浦东新区浦东新浦东新区浦东新浦东新区浦东新浦东新区浦东新浦东新区浦东新浦东新区浦东新浦东新区浦东新浦东新区浦东新</text>
+        </view>
+    </view>
+
+</view>
