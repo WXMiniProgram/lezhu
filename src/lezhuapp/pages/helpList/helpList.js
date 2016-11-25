@@ -103,7 +103,10 @@ bindPickerChange: function(e) {
   wx.getLocation({
     type: 'gcj02', //返回可以用于wx.openLocation的经纬度
     success: function(res) {
-      
+      console.log("银联latitude:");
+      console.log(res.latitude);
+      console.log("银联longitude:");
+      console.log(res.longitude);
       that.setData({
           latitudeCur:res.latitude,
           longitudeCur:res.longitude
