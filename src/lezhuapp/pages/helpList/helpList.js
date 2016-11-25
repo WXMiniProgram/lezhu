@@ -57,8 +57,6 @@ bindPickerChange: function(e) {
     reqData.latitude=that.data.latitudeCur;
     reqData.srvType=type;
     reqData.urgent=urgent;
-    console.log("reqData")
-    console.log(reqData)
 
     wx.request({
     url: 'https://wechatapp.zhhhorizon.net/intl-console-web/user/searchServiceNeeded', //接口地址

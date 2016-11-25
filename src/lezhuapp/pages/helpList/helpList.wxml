@@ -25,7 +25,7 @@
             <text>{{item.srvTitle}}</text>
     </view>
     <view class="help-list-bottom-right">
-            <text>{{item.srvDistance}}  km</text>
+            <text>{{item.srvDistance}}  m</text>
     </view>
     </view> 
   </view>
