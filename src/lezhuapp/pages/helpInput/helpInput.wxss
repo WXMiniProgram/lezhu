@@ -20,9 +20,11 @@
 
 .publish-describe{
  width: auto;
- margin-left: 5.33%;
- margin-right: 5.33%;     
- /*border-bottom:1px solid #999*/
+ padding-left: 20px;
+ padding-right: 20px; 
+ padding-top: 10px;   
+ border-bottom:1px solid #999;
+ height:130px;
 }
 
 .show-area{
@@ -61,38 +63,37 @@
 }
 
 .publish-location-img{
-  margin-left: 5.33%;
-  margin-top: 2.67%;
+  margin-left: 5%;
   height: 25px;
-  width: 22px;
+  width: 7%;
+  padding-top:3px;
+  padding-bottom:8px;
 }
 
 .publish-location-title{
-  margin-left: 2.67%;
-  margin-top: 2.67%;
+  padding-top:5px;
+  padding-bottom:3px;
   display: inline-block;
-  width: 86%;
-  word-break:keep-all;
-  overflow:hidden;
+  width: 88%;
   font-size:0.8rem;
+  background: transparent; 
+}
+
+button::after{
+  border:0px;
 }
 
 .publish-score-title{
    margin-top: 2.67%;
    margin-left: 5.33%;
-   /*margin-right: 5.33%;     */
-   /*border-bottom:1px solid #999;*/
    float: left;
    display: block;
-   /*min-height: 100%;
-   line-height: 100%;*/
 }
 
 .publish-score{
-   margin-top: 2.67%;
+   margin-top: 2%;
    margin-right: 5.33%;  
-   padding-left: 5.33%;      
-   /*border-bottom:1px solid #999;*/
+   padding-left: 3%;      
    display: inline-block;
 }
 
@@ -115,7 +116,7 @@
 
 .picker{
   display: inline-block;
-  padding: 2.8% 2.8% 2.8% 2.8%;
+  padding: 3.2% 2.8% 2.8% 2.8%;
 }
 
 .publish-section-item{

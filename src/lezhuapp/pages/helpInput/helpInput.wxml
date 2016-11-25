@@ -11,8 +11,8 @@
             </view>  
         </scroll-view> 
         <view class="publish-location">
-        <image class="publish-location-img" mode="aspectFill" src="../../images/location.png" />
-        <button name="location" class="publish-location-title" bindtap="chooseLocation">{{location}}</button>
+            <image class="publish-location-img" mode="aspectFill" src="../../images/location.png" />
+            <button name="location" class="publish-location-title" bindtap="chooseLocation">{{location}}</button>
         </view>
     </view>
 
