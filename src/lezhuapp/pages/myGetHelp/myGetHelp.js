@@ -75,7 +75,7 @@ Page({
             },
             method:"POST",
             success: function(resp) {
-                if (resp.data.resp){
+                if (resp.data.respCode){
                     if (resp.data.respCode==0){
                         wx.showToast({
                             title: "已确认要Ta帮忙!",
@@ -146,7 +146,7 @@ Page({
             },
             method:"POST",
             success: function(resp) {
-                if (resp.data.resp){
+                if (resp.data.respCode){
                     if (resp.data.respCode==0){
                         wx.showToast({
                             title: '帮助已完成，悬赏已送Ta!',
