@@ -198,15 +198,61 @@ Page({
     wx.request({
     url: 'https://wechatapp.zhhhorizon.net/intl-console-web/user/postNeed', //接口地址
     data: reqData,
+    method:"POST",
     header: {
-        'content-type': 'application/json'
+        'content-type': 'application/json',
+        "dataType":"json"
     },
     success: function(res) {
-        console.log(res.status)
+        if (res.data.status){
+            if(res.data.status==0){
+                wx.showToast({
+                    title: "提交成功!",
+                    icon: 'success',
+                    duration: 2000,
+                    success:function(){
+                        wx.redirectTo({
+                            url: '../helpList/helpList'
+                        });
+                    }
+                });
+            }
+            else if(res.data.status==0){
+                wx.showModal({
+                    title: '提示',
+                    content: '提交失败!',
+                    success: function(res) {
+                        if (res.confirm) {
+                            console.log('用户点击确定')
+                        }
+                    }
+                });
+            }
+        }
+        else{
+            //mock
+            wx.showToast({
+                title: "提交成功!",
+                icon: 'success',
+                duration: 2000,
+                success:function(){
+                        url: '../helpList/helpList'
+                    });
+                }
+            });
+        }
     },
-     fail: function() {
-       //mock
-       
+    fail: function() {
+        //mock
+        wx.showModal({
+            title: '提示',
+            content: '提交失败!',
+            success: function(res) {
+                if (res.confirm) {
+                    console.log('用户点击确定')
+                }
+            }
+        });
     }
     })
   },
