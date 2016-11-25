@@ -1,5 +1,8 @@
 <view class="container">
     <view class="description" wx:for="{{getHelpArray}}" wx:for-index="idx" wx:for-item="itemName">
+        <view class="num">
+            <text>我的求助{{idx+1}}</text>
+        </view>
         <view>
             <text>{{itemName.srvTtitle}}</text>
             <text class="cost fr">悬赏积分：{{itemName.srvCost}}</text>

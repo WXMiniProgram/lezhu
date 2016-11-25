@@ -1,7 +1,6 @@
 var app = getApp();
 Page({
     data: {
-        status:"0",
         getHelpArray:[]
     },
 

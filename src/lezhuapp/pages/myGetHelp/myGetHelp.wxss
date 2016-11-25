@@ -27,6 +27,13 @@ page{
     margin-bottom:20px;
 }
 
+.num{
+    background-color:#C2B7B7;
+    text-align:center;
+    padding-top:10px;
+    padding-bottom:10px;
+}
+
 .desDetail{
     padding-top: 8px;
     padding-bottom: 8px;
