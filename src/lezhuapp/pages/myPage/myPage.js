@@ -35,7 +35,7 @@ Page({
                 "dataType":"json"
             },
             data: {
-                openId: 'userId' ,
+                userId: self.data.wechatUserInfo.nickName,
             },
             method:"POST",
             success: function(resp) {
