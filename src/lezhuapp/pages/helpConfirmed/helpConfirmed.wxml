@@ -2,7 +2,7 @@
 <!--<map longitude="{{longitude}}" latitude="{{latitude}}" markers="{{markers}}" covers="{{covers}}" style="width: 375px; height: 300px;"></map>-->
     <view class="item">
         <view class="itemLeft fl">
-            <image src="{{headIcon}}" class="personImg fl"></image>
+            <image src="../../images/img04.jpg" class="personImg fl"></image>
             <text class="fl personName">{{nickName}}</text>
 
         </view>
