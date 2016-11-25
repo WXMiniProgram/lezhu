@@ -43,7 +43,7 @@ App({
     }, {
       latitude: 31.2398060000,
       longitude: 121.6695800000,
-      posDes:"上海唐镇地铁站",
+      posDes:"上海市浦东新区顾唐路1699号",
       picUrl: '../../images/bg02.jpg',
       userId:"阿二",
       userUrl:"../../images/img02.jpg",
@@ -52,6 +52,32 @@ App({
       srvDesc:"求带材料去总部~谢谢啦",
       srvCost:1000,
       taskId:"00002"
+    },
+    {
+      latitude: 23.099794,
+      longitude: 113.324520,
+      posDes:"上海迪士尼乐园",
+      picUrl: '../../images/bg01.jpg',
+      userId:"阿三",
+      userUrl:"../../images/img01.jpg",
+      srvDistance:2,
+      srvTitle:"求拼车去地铁站",
+      srvDesc:"如题，大家快快行动起来~",
+      srvCost:500,
+      taskId:"00003"
+
+    }, {
+      latitude: 31.2398060000,
+      longitude: 121.6695800000,
+      posDes:"上海唐镇地铁站",
+      picUrl: '../../images/bg02.jpg',
+      userId:"阿二",
+      userUrl:"../../images/img02.jpg",
+      srvDistance:3,
+      srvTitle:"求介绍附近靠谱的房子~",
+      srvDesc:"本人由于近期要来这里工作，所以需要租个房子。。。",
+      srvCost:1000,
+      taskId:"00004"
     }
   ],
   mapData:{

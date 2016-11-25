@@ -7,11 +7,11 @@ Page({
         imageHeight:125,
         photoList:[],
         location:"选择我的位置",
-        array: ['取快递', '带文件', '租房', '其他'],
+        array: ['拼车','取快递', '带文件', '租房','健身指导', '其他'],
         index: 0,
         date:"2016-09-01",
         time:"12:01",
-        curtype: "跑腿"
+        curtype: "请选择"
     },
     addAndSavePhoto:function(){
         console.log("从本地选取照片");
@@ -191,11 +191,9 @@ Page({
     reqData.srvTitle=formData.title;
     reqData.srvDesc=formData.describe;
     reqData.srvCost=formData.score;
-    reqData.startTime=formData.date;
+    reqData.endTime=formData.date+" 00:00:00";
     reqData.urgent=formData.isquickly;
     reqData.mobile=formData.phonenumber;
-
-    console.log(reqData)
 
     wx.request({
     url: 'https://wechatapp.zhhhorizon.net/intl-console-web/user/postNeed', //接口地址
