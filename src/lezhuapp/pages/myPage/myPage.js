@@ -21,6 +21,10 @@ Page({
         this.fetchData();
     },
 
+    onShow:function(){
+        this.fetchData();
+    },
+
     //获取数据
     fetchData:function(){
         var self = this;

@@ -1,54 +1,37 @@
 <view class="container">
-    <view class="item">
-        <view class="itemLeft fl">
-            <image src="{{userInfo.avatarUrl}}" class="personImg fl"></image>
-            <text class="fl personName">{{userInfo.nickName}}</text>
+    <view class="description" wx:for="{{toHelpArray}}" wx:for-index="idx" wx:for-item="itemName">
+        <view class="num">
+            <text>我的帮助{{idx+1}}</text>
         </view>
-        <view class="itemRight fr">
-            <text class="fr">悬赏：5000积分</text>
-        </view>
-    </view>
-    <view class="description">
         <view>
-            <text>标题</text>
+            <text>{{itemName.srvTtitle}}</text>
+            <text class="cost fr">悬赏积分：{{itemName.srvCost}}</text>
         </view>
          <view class="desDetail">
-            <text>标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题</text>
+            <text>{{itemName.srvDesc}}</text>
         </view>
-    </view>
-    
-    <view class="itemHelp fl">
-        <view class="itemHelpLeft fl">
-            <text class="fl helpName">联系方式</text>
+        <view class="itemHelp">
+            <text>联系方式:</text>
+            <text class="helpDetail">{{itemName.mobile}}</text>
         </view>
-        <view class="itemHelpRight fl">
-            <text class="fl helpDetail">15102135285</text>
+        <view class="itemHelp">
+            <text>详细地址:</text>
+            <text class="helpDetail">{{itemName.posDes}}</text>
         </view>
-    </view>
-    <view class="itemHelp fl">
-        <view class="itemHelpLeft fl">
-            <text class="fl helpName">详细地址</text>
-        </view>
-        <view class="itemHelpRight fl">
-            <text class="fl helpDetail">浦东新区浦东新浦东新区浦东新浦东新区浦东新浦东新区浦东新浦东新区浦东新浦东新区浦东新浦东新区浦东新浦东新区浦东新浦东新区浦东新</text>
-        </view>
-    </view>
-    <view class="statusArea fl">
-        <view class="itemStatus">
-            <text>求助状态</text>
-            <view wx:if="{{status == 1}}" class="statusDetail">
-                <view>已确认要帮忙，等待对方同意。请速与他取得联系。</view>
-            </view>
-            <view wx:elif="{{status == 2}}" class="statusDetail">
-                <view>对方同意要您帮忙，速去帮忙，就能获得悬赏。</view>
-            </view>
-            <view wx:elif="{{status == 3}}" class="statusDetail">
-                <view>帮助已完成，已获得悬赏。</view>
+        <view class="statusArea">
+            <view class="itemStatus">
+                <text>帮助状态:</text>
+                <view wx:if="{{itemName.processInfo == 1}}" class="statusDetail">
+                    <view>已确认要帮忙，等待对方同意。请速与他取得联系。</view>
+                </view>
+                <view wx:elif="{{itemName.processInfo == 2}}" class="statusDetail">
+                    <view>对方同意要您帮忙，速去帮忙，就能获得悬赏。</view>
+                </view>
+                <view wx:elif="{{itemName.processInfo == 3}}" class="statusDetail">
+                    <view>帮助已完成，已获得悬赏。</view>
+                </view>
             </view>
         </view>
-    </view>
-
-    <view class="upSpace">
     </view>
 
 </view>
