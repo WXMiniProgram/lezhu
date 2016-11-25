@@ -236,6 +236,7 @@ Page({
                 icon: 'success',
                 duration: 2000,
                 success:function(){
+                    wx.redirectTo({
                         url: '../helpList/helpList'
                     });
                 }
