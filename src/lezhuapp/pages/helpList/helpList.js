@@ -9,7 +9,8 @@ Page(
     urgent:false,
     index: 0,
     typearray: ['全部','紧急','拼车','取快递','带文件','租房','健身指导', '其他'],
-    array: []
+    array: [],
+    hintFlag:true
   },
 
   openMap: function(e) {
@@ -68,15 +69,15 @@ bindPickerChange: function(e) {
         "dataType":"json"
     },
     success: function(res) {
-        if(typeof res.data == Object){
-          that.setData({
-              array:res.data
-          });
+        if (res.data.length == 0){
+              that.setData({
+                  hintFlag:false
+              });
         }
         else{
-          that.setData({
-            array:app.mockHelpList
-          });
+            that.setData({
+                array:res.data
+            });
         }
     },
     fail: function() {

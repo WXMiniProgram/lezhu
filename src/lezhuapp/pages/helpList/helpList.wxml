@@ -30,5 +30,10 @@
     </view> 
   </view>
 </block>
+
+<view class="hint" hidden="{{hintFlag}}">
+        周围没有求助的人！
+</view>
+
 </view>
 
