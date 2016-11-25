@@ -61,14 +61,18 @@
 .publish-location-img{
   margin-left: 5.33%;
   margin-top: 2.67%;
-  height: 20px;
-  width: 20px;
+  height: 25px;
+  width: 22px;
 }
 
 .publish-location-title{
   margin-left: 2.67%;
   margin-top: 2.67%;
   display: inline-block;
+  width: 86%;
+  word-break:keep-all;
+  overflow:hidden;
+  font-size:0.8rem;
 }
 
 .publish-score-title{

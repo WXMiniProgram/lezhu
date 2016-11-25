@@ -26,7 +26,7 @@
         <label class="publish-type-title" >求助类型</label>
         <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}" >
                 <view name="helptype" class="picker">
-                        {{curdata}}
+                        {{curtype}}
                 </view>
         </picker>
     </view>

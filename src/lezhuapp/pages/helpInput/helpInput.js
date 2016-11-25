@@ -1,16 +1,17 @@
 var app = getApp();
 Page({
     data:{
+        wechatUserInfo:{},
         scrollHeight:150,
         imageWidth:125,
         imageHeight:125,
         photoList:[],
         location:"选择我的位置",
-        array: ['跑腿', '找租房', '换零钱', '其他'],
+        array: ['取快递', '带文件', '租房', '其他'],
         index: 0,
         date:"2016-09-01",
         time:"12:01",
-        curdata: "跑腿"
+        curtype: "跑腿"
     },
     addAndSavePhoto:function(){
         console.log("从本地选取照片");
@@ -86,7 +87,7 @@ Page({
     var i=e.detail.value; 
     that.setData({
       index: i,
-      curdata:that.data.array[i]
+      curtype:that.data.array[i]
     });
     console.log("123")
   },
@@ -106,13 +107,15 @@ Page({
     wx.chooseLocation({
         type: 'wgs84',
         success: function(res) {
-            var latitude = res.latitude;
-            var longitude = res.longitude;
+            var latitudeCur = res.latitude;
+            var longitudeCur = res.longitude;
             var name = res.name;
             var address = res.address;
             console.log(name);
             that.setData({
-              location:name
+              location:name,
+              latitude:latitudeCur,
+              longitude:longitudeCur
              })
         }
     })
@@ -122,6 +125,14 @@ Page({
     onLoad:function(){
         console.log("加载照片列表");
         var that = this;
+        //获取用户信息
+        app.getUserInfo(function(userInfo){
+            //更新数据
+            that.setData({
+                wechatUserInfo:userInfo
+            });
+            that.update();
+        })
         // 获取当前窗口高度，以便设置scrollView的高度
         wx.getSystemInfo({
           success: function(res) {
@@ -167,10 +178,39 @@ Page({
 
             
     },
+
      formSubmit: function(e) {
+    var that = this;
     console.log('form发生了submit事件，携带数据为：', e.detail.value)
-    console.log(this.data.photoList)
- 
+    var formData=e.detail.value;
+    var reqData={};
+    reqData.uesrId=that.data.wechatUserInfo.nickName;
+    reqData.longitude=that.data.longitude;
+    reqData.latitude=that.data.latitude;
+    reqData.svrType=that.data.curtype;
+    reqData.srvTitle=formData.title;
+    reqData.srvDesc=formData.describe;
+    reqData.srvCost=formData.score;
+    reqData.startTime=formData.date;
+    reqData.urgent=formData.isquickly;
+    reqData.mobile=formData.phonenumber;
+
+    console.log(reqData)
+
+    wx.request({
+    url: '', //接口地址
+    data: reqData,
+    header: {
+        'content-type': 'application/json'
+    },
+    success: function(res) {
+        console.log(res.status)
+    },
+     fail: function() {
+       //mock
+       
+    }
+    })
   },
     onShow:function(){
         console.log("显示图片")
