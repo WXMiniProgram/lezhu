@@ -11,7 +11,8 @@ Page({
         index: 0,
         date:"2016-09-01",
         time:"12:01",
-        curtype: "请选择"
+        curtype: "请选择",
+        location:""
     },
     addAndSavePhoto:function(){
         console.log("从本地选取照片");
@@ -194,6 +195,7 @@ Page({
     reqData.endTime=formData.date+" 00:00:00";
     reqData.urgent=formData.isquickly;
     reqData.mobile=formData.phonenumber;
+    reqData.posDes=that.data.location;
 
     wx.request({
     url: 'https://wechatapp.zhhhorizon.net/intl-console-web/user/postNeed', //接口地址
