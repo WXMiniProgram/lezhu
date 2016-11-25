@@ -211,9 +211,11 @@ Page({
                     icon: 'success',
                     duration: 2000,
                     success:function(){
-                        wx.redirectTo({
-                            url: '../helpList/helpList'
+                        wx.navigateBack({
+                            // url: '../helpList/helpList'
+                        delta:1
                         });
+
                     }
                 });
             }
@@ -236,8 +238,9 @@ Page({
                 icon: 'success',
                 duration: 2000,
                 success:function(){
-                    wx.redirectTo({
-                        url: '../helpList/helpList'
+                    wx.navigateBack({
+                        // url: '../helpList/helpList'
+                       delta:1
                     });
                 }
             });
