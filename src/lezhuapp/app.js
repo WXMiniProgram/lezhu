@@ -43,7 +43,53 @@ App({
     mobile:"12345678912",
     usePoint:"1000",
     avatarUrl:""
-  }
+  },
+  mockGetHelpArray:[
+    {
+      taskId:"001",
+      srvTtitle:"取快递",
+      srvDesc:"正在开会，帮忙到1699号大门取快递！",
+      srvType:"01",
+      startTime:"",
+      endTime:"",
+      srvCost:"50",
+      helplerId:"xczheng",
+      processInfo:"0"
+    },
+    {
+      taskId:"002",
+      srvTtitle:"带文件",
+      srvDesc:"求带文件到总部！",
+      srvType:"02",
+      startTime:"",
+      endTime:"",
+      srvCost:"50",
+      helplerId:"xczheng",
+      processInfo:"1"
+    },
+    {
+      taskId:"003",
+      srvTtitle:"租房",
+      srvDesc:"求租房！",
+      srvType:"03",
+      startTime:"",
+      endTime:"",
+      srvCost:"50",
+      helplerId:"zhanghao",
+      processInfo:"2"
+    },
+    {
+      taskId:"004",
+      srvTtitle:"其他",
+      srvDesc:"其他求助！",
+      srvType:"99",
+      startTime:"",
+      endTime:"",
+      srvCost:"50",
+      helplerId:"zhanghao",
+      processInfo:"3"
+    }
+  ]
 })
 
 

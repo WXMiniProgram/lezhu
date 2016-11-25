@@ -23,7 +23,8 @@ page{
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 4%;
-    padding-right: 4%
+    padding-right: 4%;
+    margin-bottom:20px;
 }
 
 .desDetail{
@@ -43,6 +44,10 @@ page{
 
 .statusTitle{
     margin-top: 8px;
+}
+
+.cost{
+    color:#e8ae26;
 }
 
 .statusDetail{
