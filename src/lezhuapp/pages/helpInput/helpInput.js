@@ -191,11 +191,9 @@ Page({
     reqData.srvTitle=formData.title;
     reqData.srvDesc=formData.describe;
     reqData.srvCost=formData.score;
-    reqData.startTime=formData.date;
+    reqData.endTime=formData.date+" 00:00:00";
     reqData.urgent=formData.isquickly;
     reqData.mobile=formData.phonenumber;
-
-    console.log(reqData)
 
     wx.request({
     url: 'https://wechatapp.zhhhorizon.net/intl-console-web/user/postNeed', //接口地址
