@@ -1,44 +1,60 @@
 var app = getApp();
 Page({
-    data: {
+  data: {
     latitude: null,
     longitude: null,
     location:null,
     headIcon:null,
     nickName:null,
-    phone:"",
     payScore:null,
     title:"",
     content:"",
+    taskId:"",
     markers: [
-      // {
-    //   latitude: 23.099994,
-    //   longitude: 113.324520,
-    //   name: 'T.I.T 创意园',
-    //   desc: '我现在的位置'
-    // }
+  
     ],
     covers: [
 
-    ],
-    modalHidden: true
+    ]
+    
   },
   helpClick:function(){
-    this.setData({
-      modalHidden: false
-    })
+     var that = this;
+   wx.showModal({
+     title: '订单确认',
+    content: '请尽快与发布者联系！',
+  success: function(res) {
+    if (res.confirm) {
+      //请求
+    that.sendReq();
+    }
+  }
+})
   },
-  modalCancle: function(e) {
-    this.setData({
-      modalHidden: true
+  sendReq:function(){
+    //发送请求
+    var that = this;
+    var reqData={};
+    reqData.taskId=that.data.taskId;
+    reqData.helperId=that.data.nickName;
+
+    wx.request({
+    url: 'https://wechatapp.zhhhorizon.net/intl-console-web/user/acceptRequest', //接口地址
+    data: reqData,
+    header: {
+        'content-type': 'application/json'
+    },
+    success: function(res) {
+         wx.navigateTo({
+      url: '../helpConfirmed/helpConfirmed?mobile='+res.data.mobile
     })
-  },
-  modalChange: function(e) {
-    this.setData({
-      modalHidden: true
+    },
+     fail: function() {
+       //mock
+      wx.navigateTo({
+      url: '../helpConfirmed/helpConfirmed?mobile=15825638889'
     })
-     wx.navigateTo({
-      url: '../helpConfirmed/helpConfirmed'
+    }
     })
   },
   onLoad: function () {
@@ -50,10 +66,10 @@ Page({
     location: app.mapData.location,
     headIcon:app.mapData.headIcon,
     nickName:app.mapData.nickName,
-    phone:app.mapData.phone,
     payScore:app.mapData.payScore,
     title:app.mapData.title,
     content:app.mapData.content,
+    taskId:app.mapData.taskId,
     covers:{
       latitude: app.mapData.latitude,
       longitude: app.mapData.longitude,

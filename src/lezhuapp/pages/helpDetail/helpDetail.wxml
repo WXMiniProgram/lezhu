@@ -42,8 +42,4 @@
     <button class="publish-button" bindtap="helpClick">立即帮助</button>
     </view>
 
- <modal title="订单确认" confirm-text="现在就去" cancel-text="取消" hidden="{{modalHidden}}" mask bindconfirm="modalChange" bindcancel="modalCancle">
-            请尽快与发布者联系！
-        </modal>
-
 </view>

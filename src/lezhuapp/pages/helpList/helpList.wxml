@@ -7,25 +7,25 @@
         </picker>
     </view>
 
-<block wx:for="{{array}}">
-  <view class="help-list" bindtap="openMap" data-longitude="{{item.longitude}}" data-latitude="{{item.latitude}}" data-iconpath="{{item.iconPath}}"
-  data-nickname="{{item.nickName}}" data-headicon="{{item.headIcon}}" data-payscore="{{item.payScore}}" data-title="{{item.title}}" 
-  data-content="{{item.content}}"  data-location="{{item.location}}" data-phone="{{item.phone}}"> {{nickName}}
+<block wx:for="{{array}}" wx:for-item="item">
+  <view class="help-list" bindtap="openMap" data-longitude="{{item.longitude}}" data-latitude="{{item.latitude}}" data-iconpath="{{item.picUrl}}"
+  data-nickname="{{item.userId}}" data-headicon="{{item.userUrl}}" data-payscore="{{item.srvCost}}" data-title="{{item.srvTitle}}" 
+  data-content="{{item.srvDesc}}"  data-location="{{item.posDes}}" data-taskId="{{item.taskId}}">
    <view class="help-list-top">
         <view class="help-list-top-left">
-            <image class="headIcon" src="{{item.headIcon}}"></image>
-        <text class="">{{item.nickName}}</text>
+            <image class="headIcon" src="{{item.userUrl}}"></image>
+        <text class="">{{item.userId}}</text>
         </view>
         <view class="help-list-top-right">
-         <text>悬赏：{{item.payScore}}积分</text>   
+         <text>悬赏：{{item.srvCost}}积分</text>   
         </view>
    </view> 
     <view class="help-list-bottom">
     <view class="help-list-bottom-left">
-            <text>{{item.title}}</text>
+            <text>{{item.srvTitle}}</text>
     </view>
     <view class="help-list-bottom-right">
-            <text >{{item.distance}}  km</text>
+            <text>{{item.srvDistance}}  km</text>
     </view>
     </view> 
   </view>

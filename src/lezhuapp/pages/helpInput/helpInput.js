@@ -198,7 +198,7 @@ Page({
     console.log(reqData)
 
     wx.request({
-    url: '', //接口地址
+    url: 'https://wechatapp.zhhhorizon.net/intl-console-web/user/postNeed', //接口地址
     data: reqData,
     header: {
         'content-type': 'application/json'

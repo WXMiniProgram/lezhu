@@ -26,16 +26,43 @@ App({
   globalData:{
     userInfo:null
   },
+  mockHelpList:[
+    {
+      latitude: 23.099794,
+      longitude: 113.324520,
+      posDes:"上海市人民广场",
+      picUrl: '../../images/bg01.jpg',
+      userId:"阿大",
+      userUrl:"../../images/img01.jpg",
+      srvDistance:2,
+      srvTitle:"求帮忙去快递",
+      srvDesc:"如题，求帮忙去快递如题，求帮忙去快递如题，求帮忙去快递如题，求帮忙去快递如题，求帮忙去快递如题，求帮忙去快递如题，求帮忙去快递~谢谢啦",
+      srvCost:500,
+      taskId:"00001"
+
+    }, {
+      latitude: 31.2398060000,
+      longitude: 121.6695800000,
+      posDes:"上海唐镇地铁站",
+      picUrl: '../../images/bg02.jpg',
+      userId:"阿二",
+      userUrl:"../../images/img02.jpg",
+      srvDistance:3,
+      srvTitle:"求带材料去总部",
+      srvDesc:"求带材料去总部~谢谢啦",
+      srvCost:1000,
+      taskId:"00002"
+    }
+  ],
   mapData:{
     latitude: null,
     longitude: null,
     headIcon:"",
     nickName:"",
     payScore:null,
-    phone:null,
     title:"",
-    content:""
-
+    content:"",
+    taskId:""
   },
   mockUserInfo:{
     userId:"mockUser1",

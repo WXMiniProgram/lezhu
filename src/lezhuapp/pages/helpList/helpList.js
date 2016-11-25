@@ -6,33 +6,10 @@ Page(
     latitudeCur:null,
     longitudeCur:null,
     typedata: "全部",
-    typearray: ['全部','取快递','带文件','租房', '其他'],
-    array: [{
-      latitude: 23.099794,
-      longitude: 113.324520,
-      location:"上海市人民广场",
-      iconPath: '../../images/bg01.jpg',
-      nickName:"阿大",
-      phone:"15628233628",
-      headIcon:"../../images/img01.jpg",
-      distance:2,
-      title:"求帮忙去快递",
-      content:"如题，求帮忙去快递如题，求帮忙去快递如题，求帮忙去快递如题，求帮忙去快递如题，求帮忙去快递如题，求帮忙去快递如题，求帮忙去快递~谢谢啦",
-      payScore:500
-
-    }, {
-      latitude: 31.2398060000,
-      longitude: 121.6695800000,
-      location:"上海唐镇地铁站",
-      iconPath: '../../images/bg02.jpg',
-      nickName:"阿二",
-      phone:"18925637903",
-      headIcon:"../../images/img02.jpg",
-      distance:3,
-      title:"求带材料去总部",
-      content:"求带材料去总部~谢谢啦",
-      payScore:1000
-    }]
+    urgent:false,
+    index: 0,
+    typearray: ['全部','紧急','取快递','带文件','租房', '其他'],
+    array: []
   },
 
   openMap: function(e) {
@@ -41,11 +18,11 @@ Page(
     app.mapData.longitude=Number(infoObj.longitude);
     app.mapData.location=infoObj.location;
     app.mapData.nickName=infoObj.nickname;
-    app.mapData.phone=infoObj.phone;
     app.mapData.headIcon=infoObj.headicon;
     app.mapData.payScore=infoObj.payscore;
     app.mapData.title=infoObj.title;
     app.mapData.content=infoObj.content;
+    app.mapData.taskId= infoObj.taskid;
     wx.navigateTo({
       url: '../helpDetail/helpDetail'
     })
@@ -58,33 +35,47 @@ bindPickerChange: function(e) {
       index: i,
       typedata:that.data.typearray[i]
     });
+if(i==1){
+  if(this.data.typedata=="紧急"){
+    this.sendReq("全部",ture);
+  }else{
+this.sendReq(this.data.typedata,ture);
+  }
+}else{
+  this.sendReq(this.data.typedata,false);
+}
 
 
   },
 
-  sendReq:function(){
+  sendReq:function(type,urgent){
     //发送请求
+    var that = this;
     var reqData={};
-    reqData.uesrId=this.data.wxUserInfo.nickName;
-    reqData.longitude=this.data.longitudeCur;
-    reqData.latitude=this.data.latitudeCur;
-    reqData.svrType=this.data.typedata;
-    reqData.urgent="false";
-console.log("reqData")
+    reqData.uesrId=that.data.wxUserInfo.nickName;
+    reqData.longitude=that.data.longitudeCur;
+    reqData.latitude=that.data.latitudeCur;
+    reqData.svrType=type;
+    reqData.urgent=urgent;
+    console.log("reqData")
     console.log(reqData)
 
     wx.request({
-    url: '', //接口地址
+    url: 'https://wechatapp.zhhhorizon.net/intl-console-web/user/searchServiceNeeded', //接口地址
     data: reqData,
     header: {
         'content-type': 'application/json'
     },
     success: function(res) {
-        
+         that.setData({
+      array:res.data
+    });
     },
      fail: function() {
        //mock
-       
+           that.setData({
+      array:app.mockHelpList
+    });
     }
     })
   },
@@ -116,7 +107,7 @@ console.log("reqData")
   },
   theckFlag:function(){
     if(this.data.wxUserInfo&&this.data.latitudeCur&&this.data.longitudeCur){
-      this.sendReq();
+      this.sendReq(this.data.typedata,this.data.urgent);
     }
   },
 
