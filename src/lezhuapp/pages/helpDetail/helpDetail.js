@@ -40,20 +40,40 @@ Page({
 
     wx.request({
     url: 'https://wechatapp.zhhhorizon.net/intl-console-web/user/acceptRequest', //接口地址
+    method:"POST",
     data: reqData,
     header: {
         'content-type': 'application/json'
     },
     success: function(res) {
-         wx.navigateTo({
-      url: '../helpConfirmed/helpConfirmed?mobile='+res.data.mobile
-    })
+        if(res.data.status){
+            if(res.data.status==0){
+              wx.navigateTo({
+                url: '../helpConfirmed/helpConfirmed?mobile='+res.data.mobile
+              })
+            }
+            else if(res.data.status==1){
+                wx.showModal({
+                      title: '提示',
+                      content: '确认失败',
+                      success: function(res) {
+                        if (res.confirm) {
+                            console.log('用户点击确定')
+                        }
+                      }
+                });
+            }
+        }
+        else{
+            wx.navigateTo({
+              url: '../helpConfirmed/helpConfirmed?mobile=15825638889'
+            })
+        }
     },
-     fail: function() {
-       //mock
+    fail: function() {
       wx.navigateTo({
-      url: '../helpConfirmed/helpConfirmed?mobile=15825638889'
-    })
+        url: '../helpConfirmed/helpConfirmed?mobile=15825638889'
+      })
     }
     })
   },

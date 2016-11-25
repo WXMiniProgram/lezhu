@@ -26,7 +26,6 @@ Page(
     wx.navigateTo({
       url: '../helpDetail/helpDetail'
     })
-    // console.log(app.mapData)
   },
 bindPickerChange: function(e) {
     var that = this;
@@ -35,18 +34,18 @@ bindPickerChange: function(e) {
       index: i,
       typedata:that.data.typearray[i]
     });
-if(i==1){
-  if(this.data.typedata=="紧急"){
-    this.sendReq("全部",ture);
-  }else{
-this.sendReq(this.data.typedata,ture);
-  }
-}else{
-  this.sendReq(this.data.typedata,false);
-}
-
-
-  },
+    if(i==1){
+      if(this.data.typedata=="紧急"){
+          this.sendReq("全部",ture);
+      }
+      else{
+          this.sendReq(this.data.typedata,ture);
+      }
+    }
+    else{
+      this.sendReq(this.data.typedata,false);
+    }
+},
 
   sendReq:function(type,urgent){
     //发送请求
@@ -63,19 +62,26 @@ this.sendReq(this.data.typedata,ture);
     wx.request({
     url: 'https://wechatapp.zhhhorizon.net/intl-console-web/user/searchServiceNeeded', //接口地址
     data: reqData,
+    method:"POST",
     header: {
         'content-type': 'application/json'
     },
     success: function(res) {
-         that.setData({
-      array:res.data
-    });
+        if(typeof res.data == Object){
+          that.setData({
+              array:res.data
+          });
+        }
+        else{
+          that.setData({
+            array:app.mockHelpList
+          });
+        }
     },
-     fail: function() {
-       //mock
-           that.setData({
-      array:app.mockHelpList
-    });
+    fail: function() {
+        that.setData({
+          array:app.mockHelpList
+        });
     }
     })
   },
