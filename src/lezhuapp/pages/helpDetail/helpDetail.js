@@ -66,13 +66,13 @@ Page({
             }
         }
         else{
-            wx.navigateTo({
+            wx.redirectTo({
               url: '../helpConfirmed/helpConfirmed?mobile=15825638889'
             })
         }
     },
     fail: function() {
-      wx.navigateTo({
+      wx.redirectTo({
         url: '../helpConfirmed/helpConfirmed?mobile=15825638889'
       })
     }
