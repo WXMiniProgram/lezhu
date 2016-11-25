@@ -31,7 +31,14 @@
   width: 3rem;
   height: 3rem; 
   border-radius: 50%;
+  margin-top:1rem;
+  margin-left:1rem;
+}
 
+.userName{
+  position: absolute;
+  margin-top:2rem;
+  margin-left: 0.6rem;
 }
 
 .help-list-top{
@@ -49,7 +56,7 @@
     width:7rem;
     height:2rem;
     float: right;
-    margin-top: 0.5rem;
+    margin-top: 1.6rem;
     line-height:2rem;
     font-size: 0.8rem;
 }

@@ -6,7 +6,7 @@ Page(
     latitudeCur:null,
     longitudeCur:null,
     typedata: "全部",
-    urgent:false,
+    urgent:"false",
     index: 0,
     typearray: ['全部','紧急','拼车','取快递','带文件','租房','健身指导', '其他'],
     array: [],
@@ -36,15 +36,15 @@ bindPickerChange: function(e) {
       typedata:that.data.typearray[i]
     });
     if(i==1){
-      if(this.data.typedata=="紧急"){
-          this.sendReq("全部",ture);
+      if(that.data.typedata=="紧急"){
+          that.sendReq("全部","ture");
       }
       else{
-          this.sendReq(this.data.typedata,ture);
+          that.sendReq(that.data.typedata,"ture");
       }
     }
     else{
-      this.sendReq(this.data.typedata,false);
+      that.sendReq(that.data.typedata,"false");
     }
 },
 
@@ -71,11 +71,13 @@ bindPickerChange: function(e) {
     success: function(res) {
         if (res.data.length == 0){
               that.setData({
-                  hintFlag:false
+                  hintFlag:false,
+                  array:res.data
               });
         }
         else{
             that.setData({
+                hintFlag:true,
                 array:res.data
             });
         }
