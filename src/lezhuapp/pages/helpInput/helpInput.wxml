@@ -4,12 +4,12 @@
     <view class="publish-section">
         <input name="title" class="publish-title" placeholder="标题" />
         <textarea  name="describe" class="publish-describe" placeholder="描述您的求助，清晰的描述有助于更快的获得帮助" /> 
-        <scroll-view scroll-y="true" class="show-area" style="height:{{scrollHeight}}px;">
+        <!--<scroll-view scroll-y="true" class="show-area" style="height:{{scrollHeight}}px;">
             <image bindtap="addAndSavePhoto" style="width:{{imageWidth}}rpx;height:{{imageHeight}}rpx;" mode="aspectFill" class="plus-image" src="../../images/plus.png" />
             <view class="photo-list" wx:for="{{photoList}}" wx:key="*this" wx:for-item="imageSrc">
                 <image bindtap="previewPhoto" data-image-src="{{imageSrc}}" style="width:{{imageWidth}}rpx;height:{{imageHeight}}rpx;" mode="aspectFill" src="{{imageSrc}}"/>
             </view>  
-        </scroll-view> 
+        </scroll-view>-->
         <view class="publish-location">
             <image class="publish-location-img" mode="aspectFill" src="../../images/location.png" />
             <button name="location" class="publish-location-title" bindtap="chooseLocation">{{location}}</button>
