@@ -13,7 +13,7 @@
   data-content="{{item.srvDesc}}"  data-location="{{item.posDes}}" data-taskId="{{item.taskId}}">
    <view class="help-list-top">
         <view class="help-list-top-left">
-            <image class="headIcon" src="{{item.userUrl}}"></image>
+            <image class="headIcon" src="../../images/img04.jpg"></image>
         <text class="">{{item.userId}}</text>
         </view>
         <view class="help-list-top-right">
