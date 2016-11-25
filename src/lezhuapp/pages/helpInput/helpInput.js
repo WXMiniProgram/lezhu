@@ -12,7 +12,6 @@ Page({
         date:"2016-09-01",
         time:"12:01",
         curtype: "请选择",
-        location:""
     },
     addAndSavePhoto:function(){
         console.log("从本地选取照片");
