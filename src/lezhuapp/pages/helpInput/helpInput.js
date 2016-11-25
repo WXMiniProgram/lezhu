@@ -205,25 +205,24 @@ Page({
         "dataType":"json"
     },
     success: function(res) {
-        if (res.data.status){
-            if(res.data.status==0){
-                wx.showToast({
-                    title: "提交成功!",
-                    icon: 'success',
-                    duration: 2000,
-                    success:function(){
-                        wx.navigateBack({
-                            // url: '../helpList/helpList'
-                        delta:1
-                        });
-
+        if (res.data.respCode){
+            if(res.data.respCode==0){
+                wx.showModal({
+                    title: '提示',
+                    content: '求助信息提交成功！',
+                    success: function(res) {
+                        if (res.confirm) {
+                            wx.navigateBack({
+                                delta: 1
+                            });
+                        }
                     }
                 });
             }
-            else if(res.data.status==0){
+            else if(res.data.respCode==1){
                 wx.showModal({
                     title: '提示',
-                    content: '提交失败!',
+                    content: '求助信息提交失败!',
                     success: function(res) {
                         if (res.confirm) {
                             console.log('用户点击确定')
