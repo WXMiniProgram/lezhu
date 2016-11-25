@@ -91,3 +91,12 @@ page{
     font-size: 14px;
     color:#ACACAA
 }
+
+.hint{
+    text-align: center;
+    padding-top:20px;
+    padding-bottom:20px;
+    background-color: white;
+    border-bottom: 1px solid #d4d4d4;
+    border-top: 1px solid #d4d4d4;
+}

@@ -1,7 +1,21 @@
 var app = getApp();
 Page({
     data: {
-        toHelpArray:[]
+        wechatUserInfo:{},
+        toHelpArray:[],
+        hintFlag:true
+    },
+    
+    onLoad: function () {
+        var that = this
+  	    //调用应用实例的方法获取全局数据
+        app.getUserInfo(function(userInfo){
+            //更新数据
+            that.setData({
+                wechatUserInfo:userInfo
+            });
+            that.update();
+        })
     },
 
     onReady: function () {
@@ -18,17 +32,20 @@ Page({
                 "dataType":"json"
             },
             data: {
-                openId: 'userId' ,
+                userId: self.data.wechatUserInfo.nickName,
             },
             method:"POST",
             success: function(resp) {
-                if (typeof resp.data == Array){
+                console.log(resp.data.length);
+                if (resp.data.length == 0){
                     self.setData({
-                        toHelpArray:resp.data
+                        hintFlag:false
                     });
                 }
                 else{
-                    self.doMock();
+                    self.setData({
+                        toHelpArray:resp.data
+                    });
                 }
             },
             fail:function(resp){

@@ -34,4 +34,11 @@
         </view>
     </view>
 
+    <view class="hint" hidden="{{hintFlag}}">
+        您没有帮助过，赶紧去帮忙！
+    </view>
+
+
+
+
 </view>
