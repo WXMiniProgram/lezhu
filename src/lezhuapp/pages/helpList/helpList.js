@@ -64,7 +64,8 @@ bindPickerChange: function(e) {
     data: reqData,
     method:"POST",
     header: {
-        'content-type': 'application/json'
+        'content-type': 'application/json',
+        "dataType":"json"
     },
     success: function(res) {
         if(typeof res.data == Object){

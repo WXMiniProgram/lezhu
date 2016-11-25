@@ -43,7 +43,8 @@ Page({
     method:"POST",
     data: reqData,
     header: {
-        'content-type': 'application/json'
+        'content-type': 'application/json',
+        "dataType":"json"
     },
     success: function(res) {
         if(res.data.status){
