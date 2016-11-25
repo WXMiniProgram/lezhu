@@ -39,7 +39,7 @@ Page({
     reqData.helperId=that.data.nickName;
 
     wx.request({
-    url: 'https://wechatapp.zhhhorizon.net/intl-console-web/user/acceptRequest', //接口地址
+    url: 'https://wechatapp.zhhhorizon.net/intl-console-web/user/acceptRequest', 
     method:"POST",
     data: reqData,
     header: {
