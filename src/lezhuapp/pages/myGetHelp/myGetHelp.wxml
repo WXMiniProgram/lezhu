@@ -26,6 +26,7 @@
                 <view>{{itemName.helplerId}}正在帮助您。</view>
                 <view>确认后，您悬赏的{{itemName.srvCost}}积分将扣除。只有当Ta完成帮助，并得到您的确认后，对方才能收到您的悬赏积分。</view>
                 <view class="button-wrapper">
+                    <button type="primary" size="mini" bindtap="confirmFinish" id="{{idx}}">
                         Ta已经帮我，给Ta积分！
                     </button>
                 </view>
