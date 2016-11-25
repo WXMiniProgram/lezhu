@@ -89,52 +89,52 @@ bindPickerChange: function(e) {
   },
 
   onLoad:function(options){
-    // 页面初始化 options为页面跳转所带来的参数
     //获取用户信息
-     var that = this;
-    app.getUserInfo(function(userInfo){
-            //更新数据
+      var that = this;
+      app.getUserInfo(function(userInfo){
             that.setData({
                 wxUserInfo:userInfo
             });
-            that.theckFlag();
-        })
+            that.checkFlag();
+      });
     //定位
-  wx.getLocation({
-    type: 'gcj02', //返回可以用于wx.openLocation的经纬度
-    success: function(res) {
-      console.log("银联latitude:");
-      console.log(res.latitude);
-      console.log("银联longitude:");
-      console.log(res.longitude);
-      that.setData({
-          latitudeCur:res.latitude,
-          longitudeCur:res.longitude
-            });
-      that.theckFlag();
-    }
-  })
-
+    wx.getLocation({
+        type: 'gcj02', //返回可以用于wx.openLocation的经纬度
+        success: function(res) {
+          that.setData({
+              latitudeCur:res.latitude,
+              longitudeCur:res.longitude
+          });
+          that.checkFlag();
+        }
+    });
   },
-  theckFlag:function(){
+
+  checkFlag:function(){
     if(this.data.wxUserInfo&&this.data.latitudeCur&&this.data.longitudeCur){
       this.sendReq(this.data.typedata,this.data.urgent);
     }
   },
 
-  onReady:function(){
-    // 页面渲染完成
- 
-  },
   onShow:function(){
-    // 页面显示
-   
-    
-  },
-  onHide:function(){
-    // 页面隐藏
-  },
-  onUnload:function(){
-    // 页面关闭
-  }
+      //获取用户信息
+      var that = this;
+      app.getUserInfo(function(userInfo){
+            that.setData({
+                wxUserInfo:userInfo
+            });
+            that.checkFlag();
+      });
+      //定位
+      wx.getLocation({
+        type: 'gcj02', //返回可以用于wx.openLocation的经纬度
+        success: function(res) {
+          that.setData({
+              latitudeCur:res.latitude,
+              longitudeCur:res.longitude
+          });
+          that.checkFlag();
+        }
+      });
+    }
 })
