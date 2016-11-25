@@ -44,8 +44,9 @@ page{
 
 .desDetail{
     padding-top: 8px;
-    font-size: 12px;
-    color:#ACACAA
+    font-size: 14px;
+    color:#ACACAA;
+    padding-bottom: 10px;
 }
 
 .cost{

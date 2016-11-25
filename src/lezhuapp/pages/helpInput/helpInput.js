@@ -82,45 +82,39 @@ Page({
         });
     },
     bindPickerChange: function(e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
-    var that = this;
-    var i=e.detail.value; 
-    that.setData({
-      index: i,
-      curtype:that.data.array[i]
-    });
-    console.log("123")
-  },
-   bindDateChange:function(e){
-    this.setData({
-      date:e.detail.value
-    })
-  },
-//   bindTimeChange:function(e){
-//     this.setData({
-//       time:e.detail.time
-//     })
-//   },
+        console.log('picker发送选择改变，携带值为', e.detail.value)
+        var that = this;
+        var i=e.detail.value; 
+        that.setData({
+        index: i,
+            curtype:that.data.array[i]
+        });
+        console.log("123")
+    },
+    bindDateChange:function(e){
+        this.setData({
+            date:e.detail.value
+        })
+    },
 
-  chooseLocation:function(){
-      var that = this;
-    wx.chooseLocation({
-        type: 'wgs84',
-        success: function(res) {
-            var latitudeCur = res.latitude;
-            var longitudeCur = res.longitude;
-            var name = res.name;
-            var address = res.address;
-            console.log(name);
-            that.setData({
-              location:name,
-              latitude:latitudeCur,
-              longitude:longitudeCur
-             })
-        }
-    })
-      
-  },
+    chooseLocation:function(){
+        var that = this;
+        wx.chooseLocation({
+            type: 'wgs84',
+            success: function(res) {
+                var latitudeCur = res.latitude;
+                var longitudeCur = res.longitude;
+                var name = res.name;
+                var address = res.address;
+                console.log(name);
+                that.setData({
+                    location:name,
+                    latitude:latitudeCur,
+                    longitude:longitudeCur
+                })
+            }
+        });
+    },
 
     onLoad:function(){
         console.log("加载照片列表");
@@ -179,50 +173,73 @@ Page({
             
     },
 
-     formSubmit: function(e) {
-    var that = this;
-    console.log('form发生了submit事件，携带数据为：', e.detail.value)
-    var formData=e.detail.value;
-    var reqData={};
-    reqData.userId=that.data.wechatUserInfo.nickName;
-    reqData.longitude=that.data.longitude;
-    reqData.latitude=that.data.latitude;
-    reqData.srvType=that.data.curtype;
-    reqData.srvTitle=formData.title;
-    reqData.srvDesc=formData.describe;
-    reqData.srvCost=formData.score;
-    reqData.endTime=formData.date+" 00:00:00";
-    reqData.urgent=formData.isquickly;
-    reqData.mobile=formData.phonenumber;
-    reqData.posDes=that.data.location;
-
-    wx.request({
-    url: 'https://wechatapp.zhhhorizon.net/intl-console-web/user/postNeed', //接口地址
-    data: reqData,
-    method:"POST",
-    header: {
-        'content-type': 'application/json',
-        "dataType":"json"
-    },
-    success: function(res) {
-        if (res.data.respCode){
-            if(res.data.respCode==0){
-                wx.showModal({
-                    title: '提示',
-                    content: '求助信息提交成功！',
-                    success: function(res) {
-                        if (res.confirm) {
-                            wx.navigateBack({
-                                delta: 1
-                            });
-                        }
+    formSubmit: function(e) {
+        var that = this;
+        console.log('form发生了submit事件，携带数据为：', e.detail.value)
+        var formData=e.detail.value;
+        var reqData={};
+        reqData.userId=that.data.wechatUserInfo.nickName;
+        reqData.longitude=that.data.longitude;
+        reqData.latitude=that.data.latitude;
+        reqData.srvType=that.data.curtype;
+        reqData.srvTitle=formData.title;
+        reqData.srvDesc=formData.describe;
+        reqData.srvCost=formData.score;
+        reqData.endTime=formData.date+" 00:00:00";
+        reqData.urgent=formData.isquickly;
+        reqData.mobile=formData.phonenumber;
+        reqData.posDes=that.data.location;
+        wx.request({
+            url: 'https://wechatapp.zhhhorizon.net/intl-console-web/user/postNeed', //接口地址
+            data: reqData,
+            method:"POST",
+            header: {
+                'content-type': 'application/json',
+                "dataType":"json"
+            },
+            success: function(res) {
+                if (res.data.respCode){
+                    if(res.data.respCode==0){
+                        wx.showModal({
+                            title: '提示',
+                            content: '求助信息提交成功！',
+                            success: function(res) {
+                                if (res.confirm) {
+                                    wx.navigateBack({
+                                        delta: 1
+                                    });
+                                }
+                            }
+                        });
                     }
-                });
-            }
-            else if(res.data.respCode==1){
+                    else if(res.data.respCode==1){
+                        wx.showModal({
+                            title: '提示',
+                            content: '求助信息提交失败!',
+                            success: function(res) {
+                                if (res.confirm) {
+                                    console.log('用户点击确定')
+                                }
+                            }
+                        });
+                    }
+                }
+                else{
+                    wx.showModal({
+                        title: '提示',
+                        content: '求助信息提交失败!',
+                        success: function(res) {
+                            if (res.confirm) {
+                                console.log('用户点击确定')
+                            }
+                        }
+                    });
+                }
+            },
+            fail: function() {
                 wx.showModal({
                     title: '提示',
-                    content: '求助信息提交失败!',
+                    content: '提交失败!',
                     success: function(res) {
                         if (res.confirm) {
                             console.log('用户点击确定')
@@ -230,36 +247,8 @@ Page({
                     }
                 });
             }
-        }
-        else{
-            //mock
-            wx.showToast({
-                title: "提交成功!",
-                icon: 'success',
-                duration: 2000,
-                success:function(){
-                    wx.navigateBack({
-                        // url: '../helpList/helpList'
-                       delta:1
-                    });
-                }
-            });
-        }
-    },
-    fail: function() {
-        //mock
-        wx.showModal({
-            title: '提示',
-            content: '提交失败!',
-            success: function(res) {
-                if (res.confirm) {
-                    console.log('用户点击确定')
-                }
-            }
         });
-    }
-    })
-  },
+    },
     onShow:function(){
         console.log("显示图片")
         // 获取本地保存的图片
