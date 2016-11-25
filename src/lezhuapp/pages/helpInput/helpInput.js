@@ -184,10 +184,10 @@ Page({
     console.log('form发生了submit事件，携带数据为：', e.detail.value)
     var formData=e.detail.value;
     var reqData={};
-    reqData.uesrId=that.data.wechatUserInfo.nickName;
+    reqData.userId=that.data.wechatUserInfo.nickName;
     reqData.longitude=that.data.longitude;
     reqData.latitude=that.data.latitude;
-    reqData.svrType=that.data.curtype;
+    reqData.srvType=that.data.curtype;
     reqData.srvTitle=formData.title;
     reqData.srvDesc=formData.describe;
     reqData.srvCost=formData.score;

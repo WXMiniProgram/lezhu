@@ -52,10 +52,10 @@ bindPickerChange: function(e) {
     //发送请求
     var that = this;
     var reqData={};
-    reqData.uesrId=that.data.wxUserInfo.nickName;
+    reqData.userId=that.data.wxUserInfo.nickName;
     reqData.longitude=that.data.longitudeCur;
     reqData.latitude=that.data.latitudeCur;
-    reqData.svrType=type;
+    reqData.srvType=type;
     reqData.urgent=urgent;
     console.log("reqData")
     console.log(reqData)
