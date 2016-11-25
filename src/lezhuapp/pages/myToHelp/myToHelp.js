@@ -36,7 +36,6 @@ Page({
             },
             method:"POST",
             success: function(resp) {
-                console.log(resp.data.length);
                 if (resp.data.length == 0){
                     self.setData({
                         hintFlag:false

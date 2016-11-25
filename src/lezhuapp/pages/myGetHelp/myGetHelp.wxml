@@ -34,4 +34,10 @@
             <view wx:elif="{{itemName.processInfo == 3}}" class="statusDetail">您的求助已完成。</view>
         </view>
     </view>
+
+    <view class="hint" hidden="{{hintFlag}}">
+        您没有求助过！
+    </view>
+
+
 </view>
