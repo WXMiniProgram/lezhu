@@ -39,7 +39,7 @@ Page({
             },
             method:"POST",
             success: function(resp) {
-                if (typeof resp.data == Object){
+                if (resp.data.usePoint){
                     self.setData({
                         userInfo:resp.data
                     });

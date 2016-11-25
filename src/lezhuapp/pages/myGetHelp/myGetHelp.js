@@ -77,16 +77,22 @@ Page({
             success: function(resp) {
                 if (resp.data.respCode){
                     if (resp.data.respCode==0){
-                        wx.showToast({
-                            title: "已确认要Ta帮忙!",
-                            icon: 'success',
-                            duration: 2000
+                        wx.showModal({
+                            title: '提示',
+                            content: '确认要Ta帮忙成功！',
+                            success: function(res) {
+                                if (res.confirm) {
+                                    wx.navigateBack({
+                                      delta: 1
+                                    });
+                                }
+                            }
                         });
                     }
                     else if (resp.data.respCode==1){
                         wx.showModal({
                             title: '提示',
-                            content: '确认失败',
+                            content: '确认要Ta帮忙失败',
                             success: function(res) {
                                 if (res.confirm) {
                                     console.log('用户点击确定')
@@ -99,7 +105,7 @@ Page({
                     wx.showToast({
                         title: '已确认要Ta帮忙!',
                         icon: 'success',
-                        duration: 2000,
+                        duration: 3000,
                         success:function(){
                             self.mockProcessInfo(num);
                         }
@@ -148,16 +154,22 @@ Page({
             success: function(resp) {
                 if (resp.data.respCode){
                     if (resp.data.respCode==0){
-                        wx.showToast({
-                            title: '帮助已完成，悬赏已送Ta!',
-                            icon: 'success',
-                            duration: 2000
+                        wx.showModal({
+                            title: '提示',
+                            content: '给Ta悬赏成功！',
+                            success: function(res) {
+                                if (res.confirm) {
+                                    wx.navigateBack({
+                                      delta: 1
+                                    });
+                                }
+                            }
                         });
                     }
                     else if (resp.data.respCode==1){
                         wx.showModal({
                             title: '提示',
-                            content: '确认失败',
+                            content: '给Ta悬赏失败！',
                             success: function(res) {
                                 if (res.confirm) {
                                     console.log('用户点击确定')
