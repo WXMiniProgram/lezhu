@@ -1,6 +1,6 @@
 <view class="container">
     <view class="description" wx:for="{{toHelpArray}}" wx:for-index="idx" wx:for-item="itemName">
-       <view class="num">
+        <view class="num">
             <text>我的帮助{{idx+1}}</text>
         </view>
         <view>
@@ -10,45 +10,28 @@
          <view class="desDetail">
             <text>{{itemName.srvDesc}}</text>
         </view>
-            <view class="itemHelp fl">
-        <view class="itemHelpLeft fl">
-            <text class="fl helpName">联系方式</text>
+        <view class="itemHelp">
+            <text>联系方式:</text>
+            <text class="helpDetail">{{itemName.mobile}}</text>
         </view>
-        <view class="itemHelpRight fl">
-            <text class="fl helpDetail">{{itemName.mobile}}</text>
+        <view class="itemHelp">
+            <text>详细地址:</text>
+            <text class="helpDetail">{{itemName.posDes}}</text>
         </view>
-    </view>
-    <view class="itemHelp fl">
-        <view class="itemHelpLeft fl">
-            <text class="fl helpName">详细地址</text>
-        </view>
-        <view class="itemHelpRight fl">
-            <text class="fl helpDetail">{{itemName.posDes}}</text>
-        </view>
-    </view>
-    <view class="statusArea fl">
-        <view class="itemStatus">
-            <text>帮助状态</text>
-            <view wx:if="{{itemName.processInfo == 1}}" class="statusDetail">
-                <view>已确认要帮忙，等待对方同意。请速与他取得联系。</view>
-            </view>
-            <view wx:elif="{{itemName.processInfo == 2}}" class="statusDetail">
-                <view>对方同意要您帮忙，速去帮忙，就能获得悬赏。</view>
-            </view>
-            <view wx:elif="{{itemName.processInfo == 3}}" class="statusDetail">
-                <view>帮助已完成，已获得悬赏。</view>
+        <view class="statusArea">
+            <view class="itemStatus">
+                <text>帮助状态:</text>
+                <view wx:if="{{itemName.processInfo == 1}}" class="statusDetail">
+                    <view>已确认要帮忙，等待对方同意。请速与他取得联系。</view>
+                </view>
+                <view wx:elif="{{itemName.processInfo == 2}}" class="statusDetail">
+                    <view>对方同意要您帮忙，速去帮忙，就能获得悬赏。</view>
+                </view>
+                <view wx:elif="{{itemName.processInfo == 3}}" class="statusDetail">
+                    <view>帮助已完成，已获得悬赏。</view>
+                </view>
             </view>
         </view>
-    </view>
-
-
-
-
-
-
-
-
-
     </view>
 
 </view>

@@ -11,7 +11,7 @@
             <text>{{itemName.srvDesc}}</text>
         </view>
         <view class="itemStatus">
-            <text>求助状态</text>
+            <text>求助状态:</text>
             <view wx:if="{{itemName.processInfo == 0}}" class="statusDetail">求助信息已发布，暂时没人来帮忙。</view>
             <view wx:elif="{{itemName.processInfo == 1}}" class="statusDetail">
                 <view>{{itemName.helplerId}}想要帮助您，Ta将通过电话与您取得联系。请确认要Ta帮您。</view>
