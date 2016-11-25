@@ -32,7 +32,7 @@ page{
 .personImg{
     width:60px;
     height:60px;
-    margin-left: 3px;
+    margin-left: 10px;
     border-radius: 50%;
 }
 
