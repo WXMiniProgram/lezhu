@@ -80,7 +80,7 @@ page{
 
 .helpName{
     color:black;
-    margin-top: 11px;
+    margin-top: 6px;
 }
 
 .itemHelpRight{

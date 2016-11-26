@@ -67,6 +67,11 @@ page{
     margin-top: 1.5rem;
     line-height:2rem;
     font-size: 0.8rem;
+   
+}
+
+.ffscore{
+ margin-right: 10px;
 }
 
 .upSpace{
@@ -106,12 +111,17 @@ page{
 
 .helpDetail{
     color:black;
+    margin-top: 3px;
 }
 
 .publish-button-container{
-  position:relative;
-  bottom:0;
-  padding-top:8%;
+  position:absolute;
+  bottom:0px;
+  /*padding-top:8%;*/
+  margin-top: 3px 0 5px 0;
+  float: left;
+  width: 100%;
+
 }
 
 .publish-button{
