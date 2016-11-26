@@ -37,10 +37,10 @@ bindPickerChange: function(e) {
     });
     if(i==1){
       if(that.data.typedata=="紧急"){
-          that.sendReq("全部","ture");
+          that.sendReq("全部","true");
       }
       else{
-          that.sendReq(that.data.typedata,"ture");
+          that.sendReq(that.data.typedata,"true");
       }
     }
     else{
