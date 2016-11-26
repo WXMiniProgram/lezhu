@@ -10,9 +10,9 @@
     "pages/myToHelp/myToHelp"
   ],
   "window":{
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#313131",
     "navigationBarTitleText": "乐助",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle":"white"
   },
   "tabBar": {
     "color":"#ffffff",

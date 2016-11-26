@@ -205,8 +205,8 @@ Page({
                             content: '求助信息提交成功！',
                             success: function(res) {
                                 if (res.confirm) {
-                                    wx.navigateBack({
-                                        delta: 1
+                                    wx.navigateTo({
+                                        url:"../helpList/helpList"
                                     });
                                 }
                             }
