@@ -60,9 +60,10 @@ Page({
     },
 
     //确认要Ta帮忙
-    letHelp:function(e){
+    letHelpYes:function(e){
         var self = this;
-        var num = e.target.id;
+        var idArray = (e.target.id).split("-");
+        var num = idArray[0];
         var curr = self.data.getHelpArray[num];
         wx.request({
             url: 'https://wechatapp.zhhhorizon.net/intl-console-web/user/confirmService',
@@ -71,7 +72,8 @@ Page({
                 "dataType":"json"
             },
             data: {
-                taskId: curr.taskId ,
+                taskId: curr.taskId,
+                type:"0"
             },
             method:"POST",
             success: function(resp) {
@@ -116,6 +118,75 @@ Page({
             fail:function(resp){
                 wx.showToast({
                     title: '已确认要Ta帮忙!',
+                    icon: 'success',
+                    duration: 2000,
+                    success:function(){
+                        self.mockProcessInfo(num);
+                    }
+                });
+            }
+        });
+    },
+
+    //确认要Ta帮忙
+    letHelpNo:function(e){
+        var self = this;
+        var idArray = (e.target.id).split("-");
+        var num = idArray[0];
+        var curr = self.data.getHelpArray[num];
+        wx.request({
+            url: 'https://wechatapp.zhhhorizon.net/intl-console-web/user/confirmService',
+            header:{
+                "contentType":"application/json",
+                "dataType":"json"
+            },
+            data: {
+                taskId: curr.taskId,
+                type:"1"
+            },
+            method:"POST",
+            success: function(resp) {
+                if (resp.data.respCode){
+                    if (resp.data.respCode==0){
+                        wx.showModal({
+                            title: '提示',
+                            content: '不要Ta帮忙成功！',
+                            success: function(res) {
+                                if (res.confirm) {
+                                    wx.navigateBack({
+                                      delta: 1
+                                    });
+                                }
+                            }
+                        });
+                    }
+                    else if (resp.data.respCode==1){
+                        wx.showModal({
+                            title: '提示',
+                            content: '不要Ta帮忙失败',
+                            success: function(res) {
+                                if (res.confirm) {
+                                    console.log('用户点击确定')
+                                }
+                            }
+                        });
+                    }
+                }
+                else{
+                    wx.showToast({
+                        title: '不要Ta帮忙成功！',
+                        icon: 'success',
+                        duration: 3000,
+                        success:function(){
+                            self.mockProcessInfo(num);
+                        }
+                    });
+                }
+                
+            },
+            fail:function(resp){
+                wx.showToast({
+                    title: '不要Ta帮忙成功！',
                     icon: 'success',
                     duration: 2000,
                     success:function(){
