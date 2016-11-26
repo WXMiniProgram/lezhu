@@ -134,15 +134,17 @@ button::after{
 }
 
 .publish-button{
-  width:100%;
+  width:80%;
   font-size:18px;
   text-align:center;
   text-decoration:none;
   line-height:2.2;
-  border-radius:0px;
+  border-radius:8px;
   overflow:hidden;
   color:#FFFFFF;
   background-color:#F5A520;
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 .publish-switch{
