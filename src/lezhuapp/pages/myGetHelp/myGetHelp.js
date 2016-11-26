@@ -128,7 +128,7 @@ Page({
         });
     },
 
-    //确认要Ta帮忙
+    //确认不要Ta帮忙
     letHelpNo:function(e){
         var self = this;
         var idArray = (e.target.id).split("-");
