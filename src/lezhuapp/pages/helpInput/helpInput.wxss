@@ -1,19 +1,27 @@
 .publish-container{
-  background-color: #E8E8E8;
+  background-color: #Efeff4;
   height: 100%  
 }
 
 .publish-section{
   margin-bottom: 2.67%;
   background-color: #FFFFFF;
-  border-top:1px solid #999;
-  border-bottom:1px solid #999;
+  border-top:1px solid #c8c7cc;
+  border-bottom:1px solid #c8c7cc;
+}
+
+.publish-section-last{
+  margin-bottom: 2.67%;
+  background-color: #FFFFFF;
+  border-top:1px solid #c8c7cc;
+  border-bottom:1px solid #c8c7cc;
+  height: 50px
 }
 
 .publish-title{
   padding-left:20px;
   padding-right:20px;
-  border-bottom:1px solid #999;
+  border-bottom:1px solid #c8c7cc;
   padding-top:10px;
   padding-bottom:10px;
 }
@@ -23,7 +31,7 @@
  padding-left: 20px;
  padding-right: 20px; 
  padding-top: 10px;   
- height:130px;
+ height:100px;
 }
 
 .show-area{
@@ -58,24 +66,28 @@
 }
 
 .publish-location{
-  border-top:1px solid #999;
+  border-top:1px solid #c8c7cc;
 }
 
 .publish-location-img{
   margin-left: 5%;
   height: 25px;
   width: 7%;
-  padding-top:3px;
-  padding-bottom:8px;
+  /*padding-top:8px;*/
+  /*padding-bottom:8px;*/
+  margin-top:10px;
+  position:relative;
 }
 
 .publish-location-title{
-  padding-top:5px;
-  padding-bottom:3px;
+  padding-top:2px;
+  /*padding-bottom:3px;*/
   display: inline-block;
   width: 88%;
-  font-size:0.8rem;
-  background: transparent; 
+  font-size:17px;
+  background: transparent;
+  text-align:left;
+ 
 }
 
 button::after{
@@ -90,10 +102,11 @@ button::after{
 }
 
 .publish-score{
-   margin-top: 2%;
+   margin-top: 3%;
    margin-right: 5.33%;  
    padding-left: 3%;      
    display: inline-block;
+   font-size: 17px
 }
 
 .publish-type-title{
@@ -115,16 +128,17 @@ button::after{
 
 .picker{
   display: inline-block;
-  padding: 3.2% 2.8% 2.8% 2.8%;
+  padding: 2.8% 2.8% 2.8% 2.8%;
+  font-size: 17px;
 }
 
 .publish-section-item{
-  height: 40px;
+  height: 44px;
 }
 
 .publish-section-item-first{
-  height: 40px;
-  border-bottom:1px solid #999;
+  height: 44px;
+  border-bottom:1px solid #c8c7cc;
 }
 
 .publish-button-container{
@@ -134,7 +148,7 @@ button::after{
 }
 
 .publish-button{
-  width:80%;
+  width:345px;
   font-size:18px;
   text-align:center;
   text-decoration:none;
@@ -151,4 +165,14 @@ button::after{
   margin-top:1.34%;
   margin-right:5.33%;
   float:right;
+}
+
+.publish-type-arrow{
+  margin-left: 5%;
+  height: 25px;
+  width: 7%;
+  padding-top:7px;
+  padding-bottom:8px;
+  float: right;
+  padding-right:15px;
 }

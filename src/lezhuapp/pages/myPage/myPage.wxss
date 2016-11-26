@@ -1,9 +1,9 @@
 page{
-    background-color:#D6D6D6;
+      background-color: #Efeff4;
 }
 
 .container{
-    background-color:#D6D6D6;
+     background-color: #Efeff4;
     height:100%;
 }
 

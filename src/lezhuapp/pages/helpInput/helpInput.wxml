@@ -28,7 +28,10 @@
                 <view name="helptype" class="picker">
                         {{curtype}}
                 </view>
+            <image class="publish-type-arrow" mode="aspectFill" src="../../images/arrow1.png" />
+
         </picker>
+
     </view>
 
     <view class="publish-section-item">
@@ -44,10 +47,12 @@
             <view class="picker">
                 {{date}}
             </view>
+    <image class="publish-type-arrow" mode="aspectFill" src="../../images/arrow1.png" />
+
         </picker>
     </view>
 
-    <view class="publish-section">
+    <view class="publish-section-last">
     <label class="publish-score-title" >联系方式</label>
     <input name="phonenumber" class="publish-score" placeholder="请填写您的电话" />
     </view>

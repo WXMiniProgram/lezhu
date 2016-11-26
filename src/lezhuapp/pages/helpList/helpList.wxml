@@ -3,7 +3,10 @@
         <picker class="helplist-top-type-picker" bindchange="bindPickerChange" value="{{index}}" range="{{typearray}}" >
                 <view name="helptype" class="picker">
                         {{typedata}}
+            <image class="publish-type-arrow" mode="aspectFill" src="../../images/arrow1.png" />
+
                 </view>
+
         </picker>
     </view>
 
