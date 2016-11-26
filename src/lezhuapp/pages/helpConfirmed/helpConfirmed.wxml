@@ -27,7 +27,7 @@
             <text class="fl helpName">联系方式</text>
         </view>
         <view class="itemHelpRight fl">
-            <text class="fl helpDetail">{{phone}}</text>
+            <text class="fl helpDetail" bindtap="takePhone">{{phone}}</text>
         </view>
     </view>
     <view class="itemHelp fl">
