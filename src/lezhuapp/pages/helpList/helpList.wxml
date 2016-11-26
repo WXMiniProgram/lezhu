@@ -13,7 +13,7 @@
   data-content="{{item.srvDesc}}"  data-location="{{item.posDes}}" data-taskId="{{item.taskId}}">
    <view class="help-list-top">
         <view class="help-list-top-left">
-            <image class="headIcon" src="../../images/img04.jpg"></image>
+            <image class="headIcon" src="https://wechatapp.zhhhorizon.net/intl-console-web/pic/{{item.userId}}.JPG"></image>
             <text class="userName">{{item.userId}}</text>
         </view>
         <view class="help-list-top-right">
