@@ -112,7 +112,12 @@ bindPickerChange: function(e) {
 
   checkFlag:function(){
     if(this.data.wxUserInfo&&this.data.latitudeCur&&this.data.longitudeCur){
-      this.sendReq(this.data.typedata,this.data.urgent);
+      if(this.data.typedata == "紧急"){
+        this.sendReq("全部","true");
+      }
+      else{
+        this.sendReq(this.data.typedata,"false");
+      }
     }
   },
 
