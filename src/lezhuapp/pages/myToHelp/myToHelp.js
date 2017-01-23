@@ -26,7 +26,7 @@ Page({
     fetchData:function(){
         var self = this;
         wx.request({
-            url: 'https://wechatapp.zhhhorizon.net/intl-console-web/user/searchMyService',
+            url: 'https://xxx.zhhhorizon.net/intl-console-web/user/searchMyService',
             header:{
                 "contentType":"application/json",
                 "dataType":"json"

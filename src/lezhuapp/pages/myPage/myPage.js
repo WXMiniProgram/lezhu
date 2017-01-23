@@ -29,7 +29,7 @@ Page({
     fetchData:function(){
         var self = this;
         wx.request({
-            url: 'https://wechatapp.zhhhorizon.net/intl-console-web/user/getUserInfo',
+            url: 'https://xxx.zhhhorizon.net/intl-console-web/user/getUserInfo',
             header:{
                 "contentType":"application/json",
                 "dataType":"json"

@@ -190,7 +190,7 @@ Page({
         reqData.mobile=formData.phonenumber;
         reqData.posDes=that.data.location;
         wx.request({
-            url: 'https://wechatapp.zhhhorizon.net/intl-console-web/user/postNeed', //接口地址
+            url: 'https://xxx.zhhhorizon.net/intl-console-web/user/postNeed', //接口地址
             data: reqData,
             method:"POST",
             header: {

@@ -2,7 +2,7 @@
 <map longitude="{{longitude}}" latitude="{{latitude}}" markers="{{markers}}" covers="{{covers}}" style="width: 375px; height: 300px;"></map>
     <view class="item">
         <view class="itemLeft fl">
-            <image src="https://wechatapp.zhhhorizon.net/intl-console-web/pic/{{nickName}}.JPG" class="personImg fl"></image>
+            <image src="https://xxx.zhhhorizon.net/intl-console-web/pic/{{nickName}}.JPG" class="personImg fl"></image>
             <text class="fl personName">{{nickName}}</text>
 
         </view>

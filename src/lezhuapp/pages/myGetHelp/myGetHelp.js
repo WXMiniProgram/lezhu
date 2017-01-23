@@ -26,7 +26,7 @@ Page({
     fetchData:function(){
         var self = this;
         wx.request({
-            url: 'https://wechatapp.zhhhorizon.net/intl-console-web/user/searchMyNeed',
+            url: 'https://xxx.zhhhorizon.net/intl-console-web/user/searchMyNeed',
             header:{
                 "contentType":"application/json",
                 "dataType":"json"
@@ -66,7 +66,7 @@ Page({
         var num = idArray[0];
         var curr = self.data.getHelpArray[num];
         wx.request({
-            url: 'https://wechatapp.zhhhorizon.net/intl-console-web/user/confirmService',
+            url: 'https://xxx.zhhhorizon.net/intl-console-web/user/confirmService',
             header:{
                 "contentType":"application/json",
                 "dataType":"json"
@@ -135,7 +135,7 @@ Page({
         var num = idArray[0];
         var curr = self.data.getHelpArray[num];
         wx.request({
-            url: 'https://wechatapp.zhhhorizon.net/intl-console-web/user/confirmService',
+            url: 'https://xxx.zhhhorizon.net/intl-console-web/user/confirmService',
             header:{
                 "contentType":"application/json",
                 "dataType":"json"
@@ -213,7 +213,7 @@ Page({
         var curr = self.data.getHelpArray[num];
         var point = curr.srvCost;
         wx.request({
-            url: 'https://wechatapp.zhhhorizon.net/intl-console-web/user/confirmServiceComplete',
+            url: 'https://xxx.zhhhorizon.net/intl-console-web/user/confirmServiceComplete',
             header:{
                 "contentType":"application/json",
                 "dataType":"json"

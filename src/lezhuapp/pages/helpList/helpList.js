@@ -59,7 +59,7 @@ bindPickerChange: function(e) {
     reqData.urgent=urgent;
 
     wx.request({
-    url: 'https://wechatapp.zhhhorizon.net/intl-console-web/user/searchServiceNeeded', //接口地址
+    url: 'https://xxx.zhhhorizon.net/intl-console-web/user/searchServiceNeeded', //接口地址
     data: reqData,
     method:"POST",
     header: {
