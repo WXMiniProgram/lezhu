@@ -1,3 +1,5 @@
+var INTERFACES = require('../../util/interfaceUrls.js');
+
 var app = getApp();
 Page({
   data: {
@@ -39,7 +41,7 @@ Page({
     reqData.helperId=that.data.wechatUserInfo.nickName;
 
     wx.request({
-    url: 'https://xxx.zhhhorizon.net/intl-console-web/user/acceptRequest', 
+    url: INTERFACES.acceptRequest,
     method:"POST",
     data: reqData,
     header: {

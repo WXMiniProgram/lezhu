@@ -1,3 +1,5 @@
+var INTERFACES = require('../../util/interfaceUrls.js');
+
 var app = getApp();
 Page({
     data:{
@@ -11,7 +13,7 @@ Page({
         index: 0,
         date:"2016-09-01",
         time:"12:01",
-        curtype: "请选择",
+        curtype: "请选择"
     },
     addAndSavePhoto:function(){
         console.log("从本地选取照片");
@@ -47,15 +49,7 @@ Page({
         console.log(curTarget);
         wx.navigateTo({
           url: '../previewphoto/previewphoto?imagepath='+curTarget
-        })
- /*       wx.previewImage({
-          current: curTarget, // 当前显示图片的链接，不填则默认为 urls 的第一张
-          urls: this.data.photoList,
-          success: function(res){
-            // success
-            console.log(res);
-          }
-        }) */
+        });
     },
     twoColomn:function(){
         var that = this;
@@ -190,7 +184,7 @@ Page({
         reqData.mobile=formData.phonenumber;
         reqData.posDes=that.data.location;
         wx.request({
-            url: 'https://xxx.zhhhorizon.net/intl-console-web/user/postNeed', //接口地址
+            url: INTERFACES.postNeed,
             data: reqData,
             method:"POST",
             header: {

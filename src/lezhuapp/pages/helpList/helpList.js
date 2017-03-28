@@ -1,3 +1,5 @@
+var INTERFACES = require('../../util/interfaceUrls.js');
+
 var app=getApp();
 Page(
   {
@@ -59,7 +61,7 @@ bindPickerChange: function(e) {
     reqData.urgent=urgent;
 
     wx.request({
-    url: 'https://xxx.zhhhorizon.net/intl-console-web/user/searchServiceNeeded', //接口地址
+    url: INTERFACES.searchServiceNeeded,
     data: reqData,
     method:"POST",
     header: {

@@ -1,3 +1,5 @@
+var INTERFACES = require('../../util/interfaceUrls.js');
+
 var app = getApp();
 Page({
     data: {
@@ -29,13 +31,13 @@ Page({
     fetchData:function(){
         var self = this;
         wx.request({
-            url: 'https://xxx.zhhhorizon.net/intl-console-web/user/getUserInfo',
+            url: INTERFACES.getUserInfo,
             header:{
                 "contentType":"application/json",
                 "dataType":"json"
             },
             data: {
-                userId: self.data.wechatUserInfo.nickName,
+                userId: self.data.wechatUserInfo.nickName
             },
             method:"POST",
             success: function(resp) {

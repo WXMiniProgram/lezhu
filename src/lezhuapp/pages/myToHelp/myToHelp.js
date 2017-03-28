@@ -1,3 +1,5 @@
+var INTERFACES = require('../../util/interfaceUrls.js');
+
 var app = getApp();
 Page({
     data: {
@@ -26,7 +28,7 @@ Page({
     fetchData:function(){
         var self = this;
         wx.request({
-            url: 'https://xxx.zhhhorizon.net/intl-console-web/user/searchMyService',
+            url: INTERFACES.searchMyService,
             header:{
                 "contentType":"application/json",
                 "dataType":"json"
